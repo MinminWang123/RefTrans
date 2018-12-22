@@ -1,0 +1,65 @@
+.demoTitle{
+	text-align: center;
+}
+
+.demoContents{
+	position: relative;
+}
+
+.demoDisplayFieldI{
+	position: absolute;
+	display: inline-block;
+	top:0px;
+	right: 50%;
+	width: 500px;
+	height: 400px;
+	padding: 5px;
+}
+
+.demoDisplayFieldO{
+	position: absolute;
+	text-align: left;
+	display: inline-block;
+	top:0px;
+	left:50%;
+	width: 500px;
+	height: 400px;
+	padding: 5px;
+}
+
+.inputTextBoxDiv{
+	position: relative;
+	top: 30px;
+	display: block;
+}
+
+.inputTextBox{		
+	text-align: left;
+	width: 480px;
+	height: 300px;
+	padding: 5px;
+	border: 2px solid gray;
+}
+
+.outputDiv{
+	position: relative;
+	text-align: left;
+	display: block;
+	top:5px;
+	width: 480px;
+	height: 300px;
+	padding: 5px;
+	border: 2px solid gray;
+}
+
+
+#langSel{
+	width: 150px;
+	height: 25px;
+}
+
+.submitDiv{
+	position: relative;
+	top: 35px;
+	display: block;
+}
