@@ -16,7 +16,8 @@ def transfer():
     if not request.args.get("j"):
         raise RuntimeError("missing journal format")
 
-    return transfer(request.args.get("original"), request.args.get("j"))
+    return jsonify({"tag": True,
+                    "text": request.args.get("o") + request.args.get("j")})
 
 
 if __name__ == '__main__':

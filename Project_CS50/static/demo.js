@@ -11,30 +11,28 @@ $(document).ready(function(){
 	/* Clear the input/output fields */
 	$("#inputText").val("");
 	$("#outputLbl").val("");
-	$("#langSel").val("langA");
+	$("#langSel").val("");
 
 
 	$("#submitBtn").click(function(){
 		inputText=$("#inputText").val();
 		langSel=$("#langSel").val();
-		outputText=transfer(inputText);
-		$("#outputLbl").html(langSel + " : " + inputText + outputText);
-
+		$.ajax({url: "/transfer", data: {o:inputText, j:langSel}, type: "GET", dataType: "json",})
+			.done(function(json) {
+				$("#outputLbl").html(function() {
+					content = "";
+					for (item in json) {
+						if (! item.tag) content += "<li>" + item.text + "</li>";
+						else content += "<li>" + item.text + "</li>";
+					}
+					return content;
+				});
+			})
 
 	});
 
 
 });
 
-function transfer(query, syncResults, asyncResults)
-{
-    // Get places matching query (asynchronously)
-    let parameters = {
-        original: query
-    };
-    $.getText("/transfer", parameters, function(data, textStatus, jqXHR) {
 
-        // Call typeahead's callback with search results (i.e., places)
-        asyncResults(data);
-    });
-}
+

@@ -37,6 +37,15 @@ def code(reference, journal):
     pass
 
 
-def transfer(original, journal):
-    return code(decode(original), journal)
+def transfer(input, journal):
+    references = input.split("\n")
+    output = []
+    for item in references:
+        ref = decode(item)
+        if not ref:
+            output.append({"tag": False, "text": "Error. Please check your format."})
+        else:
+            output.append({"tag": ref.isParsed(), "text": code(ref, journal)})
+    return output
+
 
