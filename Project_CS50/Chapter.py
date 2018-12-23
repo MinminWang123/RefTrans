@@ -99,7 +99,7 @@ class ChapterPublished(Chapter):
         return self._state
 
     def _parsePublisher(self):
-        exp = self.getState() + ":(.+)\.\s.*"
+        exp = self.getState() + ":(.+)\.\s?.*"
         if re.search(exp, self._original):
             self._publisher = re.search(exp, self._original).group(1).strip()
         else:
@@ -108,6 +108,7 @@ class ChapterPublished(Chapter):
 
     def getPublisher(self):
         self._parsePublisher()
+        print("o: ", self._original)
         return self._publisher
 
     def _parseSource(self):

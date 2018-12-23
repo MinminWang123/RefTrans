@@ -36,10 +36,11 @@ class Classifier(object):
 
 
 def main():
-    with open("temp.txt", "r") as file:
-        for line in file.readlines():
-            print(Classifier(line).classify())
-
+    # with open("temp.txt", "r") as file:
+    #     for line in file.readlines():
+    #         print(Classifier(line).classify())
+    text = "Bliese, P. D. (2000). Within-group agreement, non-independence, and reliability: Implications for data aggregation and analysis. In K. J. Klein. & S. W. J. Kozlowski (Eds.), Multilevel theory, research, and methods in organizations: Foundations, extensions, and new directions (pp. 349–381). San Francisco, CA: Jossey-Bass."
+    print(Classifier(text).classify())
 
 if __name__ == "__main__":
     main()

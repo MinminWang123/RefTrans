@@ -24,7 +24,7 @@ $(document).ready(function(){
 					var n = json.length;
 					for (var i=0; i < n; i++) {
 						if (json[i].tag) content += "<p>" + json[i].text + "</p>";
-						else content += "<p>" + json[i].tag + "</p>";
+						else content += '<p style="color:red">' + json[i].tag + "</p>";
 					}
 					return content;
 				});
