@@ -7,11 +7,11 @@ def decode(reference, journal):
 
 
 def parse2AMJ(reference):
-    if reference == Defs.BookPublished:
+    if reference.getCategory() == Defs.BookPublished:
         return BookPublished2AMJ(reference)
-    elif reference == Defs.ChapterPublished:
+    elif reference.getCategory() == Defs.ChapterPublished:
         return ChapterPublished2AMJ(reference)
-    elif reference == Defs.JournalPublished:
+    elif reference.getCategory() == Defs.JournalPublished:
         return JournalPublished2AMJ(reference)
 
 

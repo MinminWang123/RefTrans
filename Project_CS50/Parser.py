@@ -34,7 +34,6 @@ def decode(original):
 
 
 def code(reference, journal):
-    print(len(reference.getAuthors()))
     return Transfer.decode(reference, journal)
 
 
