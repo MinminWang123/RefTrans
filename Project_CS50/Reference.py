@@ -41,4 +41,3 @@ class Reference(object):
         authors = re.findall('\w.*?,(?:\s*[A-Z]\.)*', rawText)
         for author in authors:
             self._authors.append(AuthorLF(author))
-

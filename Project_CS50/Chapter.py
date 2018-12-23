@@ -137,12 +137,13 @@ class ChapterOnline(Chapter):
     def getCategory(self):
         return self._category
 
-
+import Transfer
 def main():
     with open('Chapter.txt', 'r') as file:
         for line in file.readlines():
             b = ChapterPublished(line)
             print(line.strip())
+            '''
             print("Authors: ", end="")
             for item in b.getAuthors():
                 print(item, end="  ")
@@ -158,7 +159,9 @@ def main():
             print("State: " + b.getState())
             print("Publisher: " + b.getPublisher())
             print("Source: " + b.getSource())
+            '''
             print()
+            print(Transfer.ChapterPublished2AMJ(b))
 
 
 if __name__ == "__main__":

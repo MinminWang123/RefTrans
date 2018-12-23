@@ -1,6 +1,5 @@
-from Reference import Reference
 import re
-
+from Reference import Reference
 
 class Book(Reference):
     def __init__(self, original):
@@ -84,12 +83,15 @@ class BookOnline(Book):
     def getSource(self):
         self._parseSource()
         return self._source
-
+import Transfer
 def main():
     with open('Book.txt', 'r') as file:
         for line in file.readlines():
             b = BookPublished(line)
             print(line.strip())
+            print()
+            print(Transfer.BookPublished2AMJ(b))
+            '''
             print("Authors: ", end="")
             for item in b.getAuthors():
                 print(item, end="  ")
@@ -98,6 +100,7 @@ def main():
             print("City: " + b.getCity())
             print("State: " + b.getState())
             print("Publisher: " + b.getPublisher())
+            '''
             print()
 
 

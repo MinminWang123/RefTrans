@@ -123,12 +123,13 @@ class JournalOnLine(Journal):
     def getCategory(self):
         return self._category
 
-
+import Transfer
 def main():
     with open('Journal.txt', 'r') as file:
         for line in file.readlines():
             b = JournalPublished(line)
             print(line.strip())
+            '''
             print("Authors: ", end="")
             for item in b.getAuthors():
                 print(item, end="  ")
@@ -139,7 +140,9 @@ def main():
             print("Issue Number: " + b.getIssue())
             print("Page Number: " + b.getStartPage() + " to " + b.getEndPage())
             print("Source: " + b.getSource())
+            '''
             print()
+            print(Transfer.JournalPublished2AMJ(b))
 
 
 if __name__ == "__main__":
