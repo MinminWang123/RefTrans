@@ -2,11 +2,11 @@ from Book import BookPublished, BookInPress, BookOnline
 from Chapter import ChapterPublished, ChapterInPress, ChapterOnline
 from Journal import JournalPublished, JournalInPress, JournalOnLine
 from Classifier import Classifier
-
+import Transfer
 
 def decode(original):
     # classify
-    category = Classifier.classify(original)
+    category = Classifier(original).classify()
 
     # instantiation
     if category == "BookPublished":
@@ -34,7 +34,7 @@ def decode(original):
 
 
 def code(reference, journal):
-    pass
+    return Transfer.decode(reference, journal)
 
 
 def transfer(input, journal):
@@ -45,6 +45,7 @@ def transfer(input, journal):
         if not ref:
             output.append({"tag": False, "text": "Error. Please check your format."})
         else:
+            print(code(ref, journal))
             output.append({"tag": ref.isParsed(), "text": code(ref, journal)})
     return output
 

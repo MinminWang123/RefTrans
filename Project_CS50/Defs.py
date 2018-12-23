@@ -11,4 +11,4 @@ JournalOnLine = 8
 
 
 # journal types
-AMJ = 11
+AMJ = "AMJ"

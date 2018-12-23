@@ -10,14 +10,13 @@ def hello_world():
 
 
 @app.route('/transfer')
-def transfer():
+def trans():
     if not request.args.get("o"):
         raise RuntimeError("missing original reference")
     if not request.args.get("j"):
         raise RuntimeError("missing journal format")
 
-    return jsonify({"tag": True,
-                    "text": request.args.get("o") + request.args.get("j")})
+    return jsonify(transfer(request.args.get("o"), request.args.get("j")))
 
 
 if __name__ == '__main__':

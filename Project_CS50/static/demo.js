@@ -20,10 +20,11 @@ $(document).ready(function(){
 		$.ajax({url: "/transfer", data: {o:inputText, j:langSel}, type: "GET", dataType: "json",})
 			.done(function(json) {
 				$("#outputLbl").html(function() {
-					content = "";
-					for (item in json) {
-						if (! item.tag) content += "<li>" + item.text + "</li>";
-						else content += "<li>" + item.text + "</li>";
+					let content = "";
+					var n = json.length;
+					for (var i=0; i < n; i++) {
+						if (json[i].tag) content += "<p>" + json[i].text + "</p>";
+						else content += "<p>" + json[i].tag + "</p>";
 					}
 					return content;
 				});
