@@ -1,4 +1,18 @@
-from Book import Book
+import Defs
+
+
+def decode(reference, journal):
+    if journal == Defs.AMJ:
+        return parse2AMJ(reference)
+
+
+def parse2AMJ(reference):
+    if reference == Defs.BookPublished:
+        return BookPublished2AMJ(reference)
+    elif reference == Defs.ChapterPublished:
+        return ChapterPublished2AMJ(reference)
+    elif reference == Defs.JournalPublished:
+        return JournalPublished2AMJ(reference)
 
 
 def BookPublished2AMJ(book):
@@ -57,6 +71,7 @@ def JournalPublished2AMJ(journal):
         author_str += ", " + author.toString()
     if (len(authors)) > 1:
         author_str += ", & " + authors[-1].toString()
-    return "{0} {1}. {2}. <i><b>{3}</b></i>, {4}: {5}.".format(author_str, journal.getYear(), journal.getTitle(), journal.getJournal(),
-                                                journal.getVolume(),
-                                                journal.getStartPage() + "-" + journal.getEndPage())
+    return "{0} {1}. {2}. <i><b>{3}</b></i>, {4}: {5}.".format(author_str, journal.getYear(), journal.getTitle(),
+                                                               journal.getJournal(),
+                                                               journal.getVolume(),
+                                                               journal.getStartPage() + "-" + journal.getEndPage())

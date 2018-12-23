@@ -1,7 +1,8 @@
 from Reference import Reference
 import re
 from Author import AuthorFL
-
+import Defs
+import Transfer
 
 class Chapter(Reference):
     def __init__(self, original):
@@ -40,7 +41,8 @@ class Chapter(Reference):
 class ChapterPublished(Chapter):
     def __init__(self, original):
         Chapter.__init__(self, original)
-        self._category = 'ChapterPublished'
+        # self._category = 'ChapterPublished'
+        self._category = Defs.ChapterPublished
 
     def getCategory(self):
         return self._category
@@ -123,7 +125,8 @@ class ChapterPublished(Chapter):
 class ChapterInPress(Chapter):
     def __init__(self, original):
         Chapter.__init__(self, original)
-        self._category = "ChapterInPress"
+        # self._category = "ChapterInPress"
+        self._category = Defs.ChapterInPress
 
     def getCategory(self):
         return self._category
@@ -132,7 +135,8 @@ class ChapterInPress(Chapter):
 class ChapterOnline(Chapter):
     def __init__(self, original):
         Chapter.__init__(self, original)
-        self._category = "ChapterOnline"
+        # self._category = "ChapterOnline"
+        self._category = Defs.ChapterOnline
 
     def getCategory(self):
         return self._category

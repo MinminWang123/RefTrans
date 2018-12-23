@@ -1,5 +1,7 @@
 from Reference import Reference
 import re
+import Defs
+import Transfer
 
 
 class Journal(Reference):
@@ -24,7 +26,8 @@ class Journal(Reference):
 class JournalPublished(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        self._category = 'JournalPublished'
+        # self._category = 'JournalPublished'
+        self._category = Defs.JournalPublished
 
     def getCategory(self):
         return self._category
@@ -95,7 +98,8 @@ class JournalPublished(Journal):
 class JournalInPress(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        self._category = "JournalInPress"
+        # self._category = "JournalInPress"
+        self._category = Defs.JournalInPress
 
     def getCategory(self):
         return self._category
@@ -118,7 +122,8 @@ class JournalInPress(Journal):
 class JournalOnLine(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        self._category = "JournalOnLine"
+        # self._category = "JournalOnLine"
+        self._category = Defs.JournalOnLine
 
     def getCategory(self):
         return self._category

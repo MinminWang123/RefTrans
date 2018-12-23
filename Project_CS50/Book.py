@@ -1,5 +1,7 @@
 import re
 from Reference import Reference
+import Transfer
+import Defs
 
 class Book(Reference):
     def __init__(self, original):
@@ -20,7 +22,8 @@ class Book(Reference):
 class BookPublished(Book):
     def __init__(self, original):
         Book.__init__(self, original)
-        self._category = 'BookPublished'
+        # self._category = 'BookPublished'
+        self._category = Defs.BookPublished
 
     def getCategory(self):
         return self._category
@@ -57,7 +60,8 @@ class BookPublished(Book):
 class BookInPress(Book):
     def __init__(self, original):
         Book.__init__(self, original)
-        self._category = "BookInPress"
+        # self._category = "BookInPress"
+        self._category = Defs.BookInPress
 
     def getCategory(self):
         return self._category
@@ -66,7 +70,8 @@ class BookInPress(Book):
 class BookOnline(Book):
     def __init__(self, original):
         Book.__init__(self, original)
-        self._category = "BookOnLine"
+        # self._category = "BookOnLine"
+        self._category = Defs.BookOnLine
 
     def getCategory(self):
         return self._category
@@ -89,7 +94,7 @@ def main():
         for line in file.readlines():
             b = BookPublished(line)
             print(line.strip())
-            print()
+            print(b.getCategory())
             print(Transfer.BookPublished2AMJ(b))
             '''
             print("Authors: ", end="")
