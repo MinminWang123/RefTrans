@@ -16,9 +16,12 @@ class Reference(object):
         return self._parsed
 
     def _parseYear(self):
-        if re.search('.*?\((.*?)\)\..*', self._original):
+        try:
             self._year = re.search('.*?\((.*?)\)\..*', self._original).group(1).strip()
-        else:
+            if len(self._year) == 0:
+                self._parsed = False
+                self._year = "error in year"
+        except AttributeError:
             self._parsed = False
             self._year = "error in year"
 
@@ -27,9 +30,9 @@ class Reference(object):
         return self._year
 
     def _parseAuthors(self):
-        if re.search('\w.*?,(?:\s*[A-Z]\.-*)*', re.search('(.*?)\(.*?\)\..*', self._original).group(1)):
+        try:
             self._splitAuthors(re.search('(.*?)\(.*?\)\..*', self._original).group(1))
-        else:
+        except AttributeError:
             self._parsed = False
             self._authors = "error in author(s)"
 
@@ -41,3 +44,6 @@ class Reference(object):
         authors = re.findall('\w.*?,(?:\s*[A-Z]\.)*', rawText)
         for author in authors:
             self._authors.append(AuthorLF(author))
+        if len(self._authors) == 0:
+            self._parsed = False
+            self._authors = "error in author(s)"

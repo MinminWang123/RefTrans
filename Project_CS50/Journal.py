@@ -1,7 +1,6 @@
 from Reference import Reference
 import re
 import Defs
-import Transfer
 
 
 class Journal(Reference):
@@ -11,9 +10,17 @@ class Journal(Reference):
     def _parseTitle(self):
         if re.search('.*?\)\..*\.|\?', self._original):
             if re.search('.*?\)\..*?\D\.\s', self._original):
-                self._title = re.search('.*?\)\.(.*?\D)\.\s', self._original).group(1).strip()
+                try:
+                    self._title = re.search('.*?\)\.(.*?\D)\.\s', self._original).group(1).strip()
+                except AttributeError:
+                    self._parsed = False
+                    self._title = "error in title"
             else:
-                self._title = re.search('.*?\)\.(.*?\?)\s', self._original).group(1).strip()
+                try:
+                    self._title = re.search('.*?\)\.(.*?\?)\s', self._original).group(1).strip()
+                except AttributeError:
+                    self._parsed = False
+                    self._title = "error in title"
         else:
             self._parsed = False
             self._title = "error in title"
@@ -26,7 +33,6 @@ class Journal(Reference):
 class JournalPublished(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        # self._category = 'JournalPublished'
         self._category = Defs.JournalPublished
 
     def getCategory(self):
@@ -36,9 +42,9 @@ class JournalPublished(Journal):
         exp = re.sub("\(", '\(', self.getTitle())
         exp = re.sub("\)", '\)', exp)
         exp = re.sub("\?", '\?', exp) + "\.*(.*?),\s\d+"
-        if re.search(exp, self._original):
+        try:
             self._journal = re.search(exp, self._original).group(1).strip()
-        else:
+        except AttributeError:
             self._parsed = False
             self._journal = "error in journal"
 
@@ -48,13 +54,19 @@ class JournalPublished(Journal):
 
     def _parseVolume(self):
         if re.search('.*,.*\d+.*,', self._original):
-            volume = re.search('.*,(.*\d+.*),', self._original).group(1).strip()
-            if re.search('.*\(.*\)', volume):
-                self._volume = re.search('(.*)\((.*)\)', volume).group(1).strip()
-                self._issue = re.search('(.*)\((.*)\)', volume).group(2).strip()
-            else:
-                self._volume = volume
-                self._issue = ""
+            try:
+                volume = re.search('.*,(.*\d+.*),', self._original).group(1).strip()
+                if re.search('.*\(.*\)', volume):
+                    self._volume = re.search('(.*)\((.*)\)', volume).group(1).strip()
+                    self._issue = re.search('(.*)\((.*)\)', volume).group(2).strip()
+                else:
+                    self._volume = volume
+                    self._issue = ""
+            except AttributeError:
+                self._parsed = False
+                self._volume = "error in volume number"
+                self._issue = "error in issue number"
+
         else:
             self._parsed = False
             self._volume = "error in volume number"
@@ -69,9 +81,9 @@ class JournalPublished(Journal):
         return self._issue
 
     def _parsePageNumber(self):
-        if re.search('.*,.*?\d.*?\.', self._original):
+        try:
             self._pages = re.findall('\w*\d+', re.search('.*,(.*?\d.*?)\.', self._original).group(1))
-        else:
+        except AttributeError:
             self._parsed = False
             self._pages = ["error in page number", "error in page number"]
 
@@ -84,10 +96,10 @@ class JournalPublished(Journal):
         return self._pages[1]
 
     def _parseSource(self):
-        exp = self.getEndPage() + "\.\s*(\w+.*)"
-        if re.search(exp, self._original):
+        try:
+            exp = self.getEndPage() + "\.\s*(\w+.*)"
             self._source = re.search(exp, self._original).group(1).strip()
-        else:
+        except AttributeError:
             self._source = ""
 
     def getSource(self):
@@ -98,7 +110,6 @@ class JournalPublished(Journal):
 class JournalInPress(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        # self._category = "JournalInPress"
         self._category = Defs.JournalInPress
 
     def getCategory(self):
@@ -108,9 +119,9 @@ class JournalInPress(Journal):
         exp = re.sub("\(", '\(', self.getTitle())
         exp = re.sub("\)", '\)', exp)
         exp = re.sub("\?", '\?', exp) + "\.*(.*?)\."
-        if re.search(exp, self._original):
+        try:
             self._journal = re.search(exp, self._original).group(1).strip()
-        else:
+        except AttributeError:
             self._parsed = False
             self._journal = "error in journal"
 
@@ -122,19 +133,17 @@ class JournalInPress(Journal):
 class JournalOnLine(Journal):
     def __init__(self, original):
         Journal.__init__(self, original)
-        # self._category = "JournalOnLine"
         self._category = Defs.JournalOnLine
 
     def getCategory(self):
         return self._category
 
-import Transfer
+
 def main():
     with open('Journal.txt', 'r') as file:
         for line in file.readlines():
             b = JournalPublished(line)
             print(line.strip())
-            '''
             print("Authors: ", end="")
             for item in b.getAuthors():
                 print(item, end="  ")
@@ -145,9 +154,7 @@ def main():
             print("Issue Number: " + b.getIssue())
             print("Page Number: " + b.getStartPage() + " to " + b.getEndPage())
             print("Source: " + b.getSource())
-            '''
             print()
-            print(Transfer.JournalPublished2AMJ(b))
 
 
 if __name__ == "__main__":

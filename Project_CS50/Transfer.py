@@ -1,7 +1,7 @@
 import Defs
 
 
-def decode(reference, journal):
+def encode(reference, journal):
     if journal == Defs.AMJ:
         return parse2AMJ(reference)
 

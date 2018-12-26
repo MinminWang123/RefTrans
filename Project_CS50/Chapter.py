@@ -2,7 +2,7 @@ from Reference import Reference
 import re
 from Author import AuthorFL
 import Defs
-import Transfer
+
 
 class Chapter(Reference):
     def __init__(self, original):
@@ -11,9 +11,9 @@ class Chapter(Reference):
         self._editors = []
 
     def _parseChapterTitle(self):
-        if re.search('.*?\(.*?\)\.\s*(.*?)\.\sIn.*?', self._original):
-            self._ctitle = re.search('.*?\(.*?\)\.\s*(.*?)\.\sIn.+', self._original).group(1).strip()
-        else:
+        try:
+             self._ctitle = re.search('.*?\(.*?\)\.\s*(.*?)\.\sIn.+', self._original).group(1).strip()
+        except AttributeError:
             self._parsed = False
             self._ctitle = "error in chapter title"
 
@@ -22,9 +22,9 @@ class Chapter(Reference):
         return self._ctitle
 
     def _parseEditors(self):
-        if re.search('.*In\s(.*?)\([Ee]ds*.*\)', self._original):
+        try:
             self._splitEditors(re.search('.*In\s(.*?)\([Ee]ds*.*\)', self._original).group(1).strip())
-        else:
+        except AttributeError:
             self._parsed = False
             self._editors = "error in editors"
 
@@ -41,16 +41,15 @@ class Chapter(Reference):
 class ChapterPublished(Chapter):
     def __init__(self, original):
         Chapter.__init__(self, original)
-        # self._category = 'ChapterPublished'
         self._category = Defs.ChapterPublished
 
     def getCategory(self):
         return self._category
 
     def _parseBookTitle(self):
-        if re.search('\([Ee]ds*.*\).*?\w+.*?\(.*pp', self._original):
+        try:
             self._btitle = re.search('\([Ee]ds*.*\).*?(\w.*?)\(.*pp', self._original).group(1).strip()
-        else:
+        except AttributeError:
             self._parsed = False
             self._btitle = "error in book title"
 
@@ -59,11 +58,12 @@ class ChapterPublished(Chapter):
         return self._btitle
 
     def _parsePageNumber(self):
-        if re.search('.*\(.*?pp.*?\)', self._original):
+        try:
             self._pageAddition = re.search('.*\((.*?)pp(.*?)\)', self._original).group(1)
             self._pages = re.findall('\w*\d+', re.search('.*\(.*?pp(.*?)\)', self._original).group(1))
-        else:
+        except AttributeError:
             self._parsed = False
+            self._pageAddition = None
             self._pages = ["error in page number", "error in page number"]
 
     def getStartPage(self):
@@ -81,11 +81,11 @@ class ChapterPublished(Chapter):
         return self._pageAddition
 
     def _parseLocation(self):
-        if re.search('.*pp.*\)\.*.*:.*', self._original):
+        try:
             location = re.search('.*pp.*\)\.*(.+,.+?):.*', self._original).group(1).strip()
             self._city = location.split(',')[0].strip()
             self._state = location.split(',')[-1].strip()
-        else:
+        except AttributeError:
             self._parsed = False
             self._city = "error in city"
             self._state = "error in state"
@@ -99,10 +99,10 @@ class ChapterPublished(Chapter):
         return self._state
 
     def _parsePublisher(self):
-        exp = self.getState() + ":(.+)\.\s?.*"
-        if re.search(exp, self._original):
+        try:
+            exp = self.getState() + ":(.+)\.\s?.*"
             self._publisher = re.search(exp, self._original).group(1).strip()
-        else:
+        except AttributeError:
             self._parsed = False
             self._publisher = "error in publisher"
 
@@ -112,11 +112,11 @@ class ChapterPublished(Chapter):
         return self._publisher
 
     def _parseSource(self):
-        exp = self.getPublisher() + ".*?(\w+.*)"
-        if re.search(exp, self._original):
+        try:
+            exp = self.getPublisher() + ".*?(\w+.*)"
             self._source = re.search(exp, self._original).group(1).strip()
-        else:
-            self._source = ""
+        except AttributeError:
+            self._source = None
 
     def getSource(self):
         self._parseSource()
@@ -137,18 +137,17 @@ class ChapterOnline(Chapter):
     def __init__(self, original):
         Chapter.__init__(self, original)
         # self._category = "ChapterOnline"
-        self._category = Defs.ChapterOnline
+        self._category = Defs.ChapterOnLine
 
     def getCategory(self):
         return self._category
 
-import Transfer
+
 def main():
     with open('Chapter.txt', 'r') as file:
         for line in file.readlines():
             b = ChapterPublished(line)
             print(line.strip())
-            '''
             print("Authors: ", end="")
             for item in b.getAuthors():
                 print(item, end="  ")
@@ -164,9 +163,7 @@ def main():
             print("State: " + b.getState())
             print("Publisher: " + b.getPublisher())
             print("Source: " + b.getSource())
-            '''
             print()
-            print(Transfer.ChapterPublished2AMJ(b))
 
 
 if __name__ == "__main__":

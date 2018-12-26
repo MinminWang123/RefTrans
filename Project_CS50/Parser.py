@@ -3,29 +3,30 @@ from Chapter import ChapterPublished, ChapterInPress, ChapterOnline
 from Journal import JournalPublished, JournalInPress, JournalOnLine
 from Classifier import Classifier
 import Transfer
+import Defs
 
 def decode(original):
     # classify
     category = Classifier(original).classify()
 
     # instantiation
-    if category == "BookPublished":
+    if category == Defs.BookPublished:
         item = BookPublished(original)
-    elif category == "BookInPress":
+    elif category == Defs.BookInPress:
         item = BookInPress(original)
-    elif category == "BookOnline":
+    elif category == Defs.BookOnLine:
         item = BookOnline(original)
-    elif category == "ChapterPublished":
+    elif category == Defs.ChapterPublished:
         item = ChapterPublished(original)
-    elif category == "ChapterInPress":
+    elif category == Defs.ChapterInPress:
         item = ChapterInPress(original)
-    elif category == "ChapterOnLine":
+    elif category == Defs.ChapterOnLine:
         item = ChapterOnline(original)
-    elif category == "JournalPublished":
+    elif category == Defs.JournalPublished:
         item = JournalPublished(original)
-    elif category == "JournalInPress":
+    elif category == Defs.JournalInPress:
         item = JournalInPress(original)
-    elif category == "JournalOnLine":
+    elif category == Defs.JournalOnLine:
         item = JournalOnLine(original)
     else:
         item = None
@@ -33,15 +34,12 @@ def decode(original):
     return item
 
 
-def code(reference, journal):
-    return Transfer.decode(reference, journal)
+def encode(reference, journal):
+    return Transfer.encode(reference, journal)
 
 
 def transfer(input, journal):
     references = input.split("\n")
-    # for item in references:
-    #     print(item)
-    #     print(Classifier(item).classify())
     output = []
     for item in references:
         if item == "":
@@ -50,8 +48,8 @@ def transfer(input, journal):
         if not ref:
             output.append({"tag": False, "text": "Error. Please check your format."})
         else:
-            # print(code(ref, journal))
-            output.append({"tag": ref.isParsed(), "text": code(ref, journal)})
+            print(ref.isParsed())
+            output.append({"text": encode(ref, journal), "tag": ref.isParsed()})
     return output
 
 
