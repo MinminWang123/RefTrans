@@ -5,6 +5,10 @@ import re
 def encode(reference, journal):
     if journal == Defs.AMJ:
         return parse2AMJ(reference)
+    if journal == Defs.AMR:
+        return parse2AMR(reference)
+    if journal == Defs.HR:
+        return parse2HR(reference)
 
 
 def parse2AMJ(reference):
@@ -23,6 +27,15 @@ def parse2AMR(reference):
         return chapter_published_AMR(reference)
     elif reference.getCategory() == Defs.JournalPublished:
         return journal_published_AMR(reference)
+
+def parse2HR(reference):
+    if reference.getCategory() == Defs.BookPublished:
+        return book_published_HR(reference)
+    elif reference.getCategory() == Defs.ChapterPublished:
+        return chapter_published_HR(reference)
+    elif reference.getCategory() == Defs.JournalPublished:
+        return journal_published_HR(reference)
+
 
 
 def book_published_AMR(book):
@@ -180,15 +193,17 @@ def main():
     c = ChapterPublished(c_input)
     b = BookPublished(b_input)
     j = JournalPublished(j_input)
+
+    journal_type = "AMR"
     print("****")
     print("chapter:")
-    print(chapter_published_HR(c))
+    print(encode(c, journal_type))
     print()
     print("book:")
-    print(book_published_HR(b))
+    print(encode(b, journal_type))
     print()
     print("journal:")
-    print(journal_published_HR(j))
+    print(encode(j, journal_type))
 
 if __name__ == "__main__":
     main()

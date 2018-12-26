@@ -12,3 +12,5 @@ JournalOnLine = "JournalOnLine"
 
 # journal types
 AMJ = "AMJ"
+AMR = "AMR"
+HR = "HR"
