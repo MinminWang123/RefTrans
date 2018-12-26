@@ -1,5 +1,6 @@
 import re
 
+
 class Author(object):
     _firstName = ""
     _lastName = ""
@@ -10,26 +11,24 @@ class Author(object):
     def getFirstName(self):
         return self._firstName
 
-    def toOnlySpaceString(self):
+    def toFormatString(self, f_cat=". ", fl_cat=", "):
         result = ""
         for item in self.getFirstName():
-            result += item
-        return self.getLastName() + " " + result
+            result += item + f_cat
+        return self.getLastName() + fl_cat + result.strip()
 
-    def toString(self):
-        return self.__str__()
-
-    def toReverseString(self):
+    def toReverseFormatString(self, f_cat=". ", fl_cat=""):
         result = ""
         for item in self.getFirstName():
-            result += item + ". "
-        return result + self.getLastName()
+            result += item + f_cat
+        return result + fl_cat + self.getLastName()
 
     def __str__(self):
         result = ""
         for item in self.getFirstName():
             result += item + ". "
         return self.getLastName() + ", " + result.strip()
+
 
 class AuthorLF(Author):
     def __init__(self, original):
@@ -45,5 +44,3 @@ class AuthorFL(Author):
         self._firstName = []
         for letter in re.findall('[A-Z]\.', self._original):
             self._firstName.append(letter.strip('.'))
-
-
