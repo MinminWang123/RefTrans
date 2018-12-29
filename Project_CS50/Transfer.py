@@ -121,8 +121,9 @@ def online_journal_amj(journal):
 
 
 def website_amj(website):
+    author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
-    return "{0} ({1}) {2} Retrieved from: {3}".format(website.get_authors(), website.get_year(),
+    return "{0} ({1}) {2} Retrieved from: {3}".format(author_str, website.get_year(),
                                                       title,
                                                       website.get_source())
 
@@ -264,8 +265,9 @@ def online_journal_hr(journal):
 
 
 def website_hr(website):
+    author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
-    return "{0} ({1}) {2} Available at: {3}".format(website.get_authors(), website.get_year(),
+    return "{0} ({1}) {2} Available at: {3}".format(author_str, website.get_year(),
                                                     title,
                                                     website.get_source())
 
