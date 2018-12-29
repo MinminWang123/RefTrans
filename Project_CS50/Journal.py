@@ -1,33 +1,12 @@
 from Reference import Reference
 import re
 import Defs
+import Parser
 
 
 class Journal(Reference):
     def __init__(self, original):
         Reference.__init__(self, original)
-
-    def _parseTitle(self):
-        if re.search('.*?\)\..*\.|\?', self._original):
-            if re.search('.*?\)\..*?\D\.\s', self._original):
-                try:
-                    self._title = re.search('.*?\)\.(.*?\D)\.\s', self._original).group(1).strip()
-                except AttributeError:
-                    self._parsed = False
-                    self._title = "error in title"
-            else:
-                try:
-                    self._title = re.search('.*?\)\.(.*?\?)\s', self._original).group(1).strip()
-                except AttributeError:
-                    self._parsed = False
-                    self._title = "error in title"
-        else:
-            self._parsed = False
-            self._title = "error in title"
-
-    def getTitle(self):
-        self._parseTitle()
-        return self._title
 
 
 class JournalPublished(Journal):
@@ -35,25 +14,57 @@ class JournalPublished(Journal):
         Journal.__init__(self, original)
         self._category = Defs.JournalPublished
 
-    def getCategory(self):
+    def get_category(self):
         return self._category
 
-    def _parseJournal(self):
-        exp = re.sub("\(", '\(', self.getTitle())
-        exp = re.sub("\)", '\)', exp)
-        exp = re.sub("\?", '\?', exp) + "\.*(.*?),\s\d+"
+    def _parse_title(self):
+        if re.search('.*[\.\?!]', self._get_body()):
+
+            # if ends with .
+            if re.search('.*?\D\.\s', self._get_body()):
+                try:
+                    self._title = re.search('(.*?\D)\.\s', self._get_body()).group(1).strip()
+                except AttributeError:
+                    self._parsed = False
+                    self._title = "error in title"
+            # elif, ends with ?
+            elif re.search("\?", self._get_body()):
+                try:
+                    self._title = re.search('(.*?\?)\s', self._get_body()).group(1).strip()
+                except AttributeError:
+                    self._parsed = False
+                    self._title = "error in title"
+
+            # else, ends with !
+            else:
+                try:
+                    self._title = re.search('(.*?!)\s', self._get_body()).group(1).strip()
+                except AttributeError:
+                    self._parsed = False
+                    self._title = "error in title"
+        else:
+            self._parsed = False
+            self._title = "error in title"
+
+    def get_title(self):
+        self._parse_title()
+        return self._title
+
+    def _parse_journal(self):
+        exp = re.sub("\?", '.', self._get_body())
+        exp = re.sub("!", '.', exp)
         try:
-            self._journal = re.search(exp, self._original).group(1).strip()
+            self._journal = re.search(".*\.(.*?),\s\d.*", exp).group(1).strip()
         except AttributeError:
             self._parsed = False
             self._journal = "error in journal"
 
-    def getJournal(self):
-        self._parseJournal()
+    def get_journal(self):
+        self._parse_journal()
         return self._journal
 
-    def _parseVolume(self):
-        if re.search('.*,.*\d+.*,', self._original):
+    def _parse_volume(self):
+        if re.search('.*,.*\d+.*,', self._get_body()):
             try:
                 volume = re.search('.*,(.*\d+.*),', self._original).group(1).strip()
                 if re.search('.*\(.*\)', volume):
@@ -72,39 +83,31 @@ class JournalPublished(Journal):
             self._volume = "error in volume number"
             self._issue = "error in issue number"
 
-    def getVolume(self):
-        self._parseVolume()
+    def get_volume(self):
+        self._parse_volume()
         return self._volume
 
-    def getIssue(self):
-        self._parseVolume()
+    def get_issue(self):
+        self._parse_volume()
         return self._issue
 
-    def _parsePageNumber(self):
+    def _parse_page_number(self):
         try:
-            self._pages = re.findall('\w*\d+', re.search('.*,(.*?\d.*?)\.', self._original).group(1))
+            self._pages = re.findall('\w*\d+', re.search('.*,(.*?\d.*?)\.', self._get_body()).group(1))
+            if len(self._pages) == 1:
+                self._parsed = False
+                self._pages = [self._pages[0], "error in ending page"]
         except AttributeError:
             self._parsed = False
-            self._pages = ["error in page number", "error in page number"]
+            self._pages = ["error in beginning page", "error in ending page"]
 
-    def getStartPage(self):
-        self._parsePageNumber()
+    def get_start_page(self):
+        self._parse_page_number()
         return self._pages[0]
 
-    def getEndPage(self):
-        self._parsePageNumber()
+    def get_end_page(self):
+        self._parse_page_number()
         return self._pages[1]
-
-    def _parseSource(self):
-        try:
-            exp = self.getEndPage() + "\.\s*(\w+.*)"
-            self._source = re.search(exp, self._original).group(1).strip()
-        except AttributeError:
-            self._source = ""
-
-    def getSource(self):
-        self._parseSource()
-        return self._source
 
 
 class JournalInPress(Journal):
@@ -112,49 +115,66 @@ class JournalInPress(Journal):
         Journal.__init__(self, original)
         self._category = Defs.JournalInPress
 
-    def getCategory(self):
+    def get_category(self):
         return self._category
 
-    def _parseJournal(self):
-        exp = re.sub("\(", '\(', self.getTitle())
-        exp = re.sub("\)", '\)', exp)
-        exp = re.sub("\?", '\?', exp) + "\.*(.*?)\."
+    def _parse_title(self):
+        self._parse_journal()
+        if self.get_journal() == "error in journal":
+            exp = "^(.*)[\.\?\!]\s"
+        else:
+            exp = "(.*)" + self.get_journal()
         try:
-            self._journal = re.search(exp, self._original).group(1).strip()
+            self._title = re.search(exp, self._get_body()).group(1).strip()
+        except AttributeError:
+            self._parsed = False
+            self._title = "error in title"
+
+    def get_title(self):
+        self._parse_title()
+        return self._title.strip(".")
+
+    def _parse_journal(self):
+        exp = re.sub("\?", '.', self._get_body())
+        exp = re.sub("!", '.', exp)
+        try:
+            self._journal = re.search(".*\.(.+?)\.", exp).group(1).strip()
         except AttributeError:
             self._parsed = False
             self._journal = "error in journal"
 
-    def getJournal(self):
-        self._parseJournal()
+    def get_journal(self):
+        self._parse_journal()
         return self._journal
-
-
-class JournalOnLine(Journal):
-    def __init__(self, original):
-        Journal.__init__(self, original)
-        self._category = Defs.JournalOnLine
-
-    def getCategory(self):
-        return self._category
 
 
 def main():
     with open('Journal.txt', 'r') as file:
         for line in file.readlines():
-            b = JournalPublished(line)
             print(line.strip())
-            print("Authors: ", end="")
-            for item in b.getAuthors():
-                print(item, end="  ")
-            print("\nYear: " + b.getYear())
-            print("Title: " + b.getTitle())
-            print("Journal: " + b.getJournal())
-            print("Volume Number: " + b.getVolume())
-            print("Issue Number: " + b.getIssue())
-            print("Page Number: " + b.getStartPage() + " to " + b.getEndPage())
-            print("Source: " + b.getSource())
-            print()
+            b = Parser.decode(line)
+            if b.get_category() == Defs.JournalPublished:
+                print(b.get_category())
+                print("Authors: ", end="")
+                for item in b.get_authors():
+                    print(item, end="  ")
+                print("\nYear: " + b.get_year())
+                print("Title: " + b.get_title())
+                print("Journal: " + b.get_journal())
+                print("Volume Number: " + b.get_volume())
+                print("Issue Number: " + b.get_issue())
+                print("Page Number: " + b.get_start_page() + " to " + b.get_end_page())
+                print()
+            if b.get_category() == Defs.JournalInPress:
+                print(b.get_original().strip())
+                print(b.get_category())
+                print("Authors: ", end="")
+                for item in b.get_authors():
+                    print(item, end="  ")
+                print("\nYear: " + b.get_year())
+                print("Title: " + b.get_title())
+                print("Journal: " + b.get_journal())
+                print()
 
 
 if __name__ == "__main__":

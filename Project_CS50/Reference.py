@@ -1,5 +1,6 @@
 import re
 from Author import AuthorLF
+import utils
 
 
 class Reference(object):
@@ -9,13 +10,13 @@ class Reference(object):
         self._year = ""
         self._authors = []
 
-    def getOriginal(self):
+    def get_original(self):
         return self._original
 
-    def isParsed(self):
+    def is_parsed(self):
         return self._parsed
 
-    def _parseYear(self):
+    def _parse_year(self):
         try:
             self._year = re.search('.*?\((.*?)\)\..*', self._original).group(1).strip()
             if len(self._year) == 0:
@@ -25,25 +26,45 @@ class Reference(object):
             self._parsed = False
             self._year = "error in year"
 
-    def getYear(self):
-        self._parseYear()
+    def get_year(self):
+        self._parse_year()
         return self._year
 
-    def _parseAuthors(self):
+    def _parse_authors(self):
         try:
-            self._splitAuthors(re.search('(.*?)\(.*?\)\..*', self._original).group(1))
+            self._split_authors(re.search('(.*?)\(.*?\)\..*', self._original).group(1))
         except AttributeError:
             self._parsed = False
             self._authors = "error in author(s)"
 
-    def getAuthors(self):
-        self._parseAuthors()
+    def get_authors(self):
+        self._parse_authors()
         return self._authors
 
-    def _splitAuthors(self, rawText):
-        authors = re.findall('\w.*?,(?:\s*[A-Z]\.)*', rawText)
+    def _split_authors(self, raw_text):
+        authors = re.findall('\w.*?,(?:\s*[A-Z]\.)*', raw_text)
         for author in authors:
             self._authors.append(AuthorLF(author))
         if len(self._authors) == 0:
             self._parsed = False
             self._authors = "error in author(s)"
+
+    def get_source(self):
+        return utils.get_source(self._original)
+
+    def _get_body(self):
+        return utils.get_body(self._original)
+
+
+def main():
+    with open('Journal.txt', 'r') as file:
+        for line in file.readlines():
+            b = Reference(line)
+            print("Original: " + line.strip())
+            print("Source: " + b.get_source())
+            print("Body: " + b.get_body())
+            print()
+
+
+if __name__ == "__main__":
+    main()

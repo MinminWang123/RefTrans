@@ -13,11 +13,19 @@ def extract_source(text):
 
 
 def get_source(text):
-    return extract_source(text)[1]
+    return extract_source(text)[1].strip()
 
 
 def get_clean_text(text):
-    return extract_source(text)[0]
+    return extract_source(text)[0].strip()
+
+
+def get_body(text):
+    try:
+        body = re.search("\)\.(.*)", get_clean_text(text)).group(1).strip()
+    except AttributeError:
+        body = None
+    return body
 
 
 def main():
@@ -29,6 +37,7 @@ def main():
     line = "Chen, G., Mathieu, J. E., & Bliese, P. D. (2004). A framework for conducting multilevel construct validation. In F. J. Yammarino & F. Dansereau (Eds.), Research in multilevel issues: Multilevel issues in organizational behavior and processes (Vol. 3, pp. 273-303). Oxford, UK: Elsevier. httpswww.//dx.doi.org/10.1016/S1475-9144(04)03013-9"
     print("clean:", get_clean_text(line))
     print("source:", get_source(line))
+    print("body: ", get_body(line))
 
 
 

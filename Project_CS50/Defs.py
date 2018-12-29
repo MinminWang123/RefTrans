@@ -1,13 +1,13 @@
 # reference types
 BookPublished = "BookPublished"
 BookInPress = "BookInPress"
-BookOnLine = "BookOnLine"
 ChapterPublished = "ChapterPublished"
 ChapterInPress = "ChapterInPress"
-ChapterOnLine = "ChapterOnLine"
 JournalPublished = "JournalPublished"
 JournalInPress = "JournalInPress"
-JournalOnLine = "JournalOnLine"
+OnLineJournal = "OnLineJournal"
+Website = "Website"
+Other = "Other"
 
 
 # journal types

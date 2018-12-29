@@ -1,55 +1,89 @@
-from Book import BookPublished, BookInPress, BookOnline
-from Chapter import ChapterPublished, ChapterInPress, ChapterOnline
-from Journal import JournalPublished, JournalInPress, JournalOnLine
-from Classifier import Classifier
+from Book import BookPublished, BookInPress
+from Chapter import ChapterPublished, ChapterInPress
+from Journal import JournalPublished, JournalInPress
+from Others import OnLineJournal, Website, Other
 import Transfer
-import Defs
+import re
+import utils
+
 
 def decode(original):
-    # classify
-    category = Classifier(original).classify()
+    """
+    classifier
+    :param original: original text
+    :return: a Reference Object
+    """
 
-    # instantiation
-    if category == Defs.BookPublished:
-        item = BookPublished(original)
-    elif category == Defs.BookInPress:
-        item = BookInPress(original)
-    elif category == Defs.BookOnLine:
-        item = BookOnline(original)
-    elif category == Defs.ChapterPublished:
-        item = ChapterPublished(original)
-    elif category == Defs.ChapterInPress:
-        item = ChapterInPress(original)
-    elif category == Defs.ChapterOnLine:
-        item = ChapterOnline(original)
-    elif category == Defs.JournalPublished:
-        item = JournalPublished(original)
-    elif category == Defs.JournalInPress:
-        item = JournalInPress(original)
-    elif category == Defs.JournalOnLine:
-        item = JournalOnLine(original)
+    # Others
+    if re.search("[Rr]etrieved\sfrom", original):
+        try:
+            info = utils.get_body(original)
+        except AttributeError:
+            return Other(original)
+        re.sub("ed\.", "ed", info)
+        k = info.count(".") + info.count("?") + info.count("!")
+        if k <= 1:
+            return Website(original)
+        else:
+            return OnLineJournal(original)
+
+    # Chapter
+    if re.search("In.*\([Ee]ds*\.*\)", original):
+        if "(in press)" in original:
+            return ChapterInPress(original)
+        else:
+            return ChapterPublished(original)
+
+    # JournalPublished or BookPublished
+    body = utils.get_body(original)
+    if not body:
+        return Other(original)
+
+    if "(in press)" not in original:
+        if re.search("\d+,", body):
+            return JournalPublished(original)
+        else:
+            return BookPublished(original)
+
+    # JournalInPress or BookInPress
+    body = re.sub("ed\.", "ed", body)
+    k = body.count(".") + body.count("?") + body.count("?")
+    if k <= 1:
+        return BookInPress(original)
     else:
-        item = None
-
-    return item
+        return JournalInPress(original)
 
 
 def encode(reference, journal):
+    """
+    encode reference object to a specific journal
+    :param reference: a Reference Object
+    :param journal: any journal in Defs
+    :return: formatted string
+    """
     return Transfer.encode(reference, journal)
 
 
-def transfer(input, journal):
-    references = input.split("\n")
+def transfer(input_text, journal):
+    """
+    split input and transfer format
+    :param input_text: original text get from website
+    :param journal: journal chosen in website
+    :return: a list of {"text": formatted string, "tag": True if transferred, False otherwise}
+    """
+    references = input_text.split("\n")
     output = []
     for item in references:
         if item == "":
             continue
         ref = decode(item)
         if not ref:
-            output.append({"tag": False, "text": "Error. Please check your format."})
+            output.append({"text": "Error. Please check your format.", "tag": False})
         else:
-            print(ref.isParsed())
-            output.append({"text": encode(ref, journal), "tag": ref.isParsed()})
+            output.append({"text": encode(ref, journal), "tag": ref.is_parsed()})
     return output
 
+
+def main():
+    pass
 

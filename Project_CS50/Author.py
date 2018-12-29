@@ -2,45 +2,45 @@ import re
 
 
 class Author(object):
-    _firstName = ""
-    _lastName = ""
+    _first_name = ""
+    _last_name = ""
 
-    def getLastName(self):
-        return self._lastName
+    def get_last_name(self):
+        return self._last_name
 
-    def getFirstName(self):
-        return self._firstName
+    def get_first_name(self):
+        return self._first_name
 
-    def toFormatString(self, f_cat=". ", fl_cat=", "):
+    def to_format_string(self, f_cat=". ", fl_cat=", "):
         result = ""
-        for item in self.getFirstName():
+        for item in self.get_first_name():
             result += item + f_cat
-        return self.getLastName() + fl_cat + result.strip()
+        return self.get_last_name() + fl_cat + result.strip()
 
-    def toReverseFormatString(self, f_cat=". ", fl_cat=""):
+    def to_reverse_format_string(self, f_cat=". ", fl_cat=""):
         result = ""
-        for item in self.getFirstName():
+        for item in self.get_first_name():
             result += item + f_cat
-        return result + fl_cat + self.getLastName()
+        return result + fl_cat + self.get_last_name()
 
     def __str__(self):
         result = ""
-        for item in self.getFirstName():
+        for item in self.get_first_name():
             result += item + ". "
-        return self.getLastName() + ", " + result.strip()
+        return self.get_last_name() + ", " + result.strip()
 
 
 class AuthorLF(Author):
     def __init__(self, original):
         self._original = original
-        self._lastName = self._original.split(',')[0]
-        self._firstName = re.findall('[A-Z]', self._original.split(',')[1])
+        self._last_name = self._original.split(',')[0]
+        self._first_name = re.findall('[A-Z]', self._original.split(',')[1])
 
 
 class AuthorFL(Author):
     def __init__(self, original):
         self._original = original
-        self._lastName = self._original.split('.')[-1].strip()
-        self._firstName = []
+        self._last_name = self._original.split('.')[-1].strip()
+        self._first_name = []
         for letter in re.findall('[A-Z]\.', self._original):
-            self._firstName.append(letter.strip('.'))
+            self._first_name.append(letter.strip('.'))
