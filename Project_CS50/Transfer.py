@@ -22,7 +22,7 @@ def parse_to_amj(reference):
         return chapter_inpress_amj(reference)
     elif reference.get_category() == Defs.JournalInPress:
         return journal_inpress_amj(reference)
-    elif reference.get_category() in [Defs.OnLineJournal, Defs.Website]:
+    elif reference.get_category() == Defs.OnLineJournal:
         return online_journal_amj(reference)
     elif reference.get_category() == Defs.Website:
         return website_amj(reference)
@@ -123,6 +123,8 @@ def online_journal_amj(journal):
 def website_amj(website):
     author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
+    title = bold_text(title)
+    title = italic_text(title)
     return "{0} ({1}) {2} Retrieved from: {3}".format(author_str, website.get_year(),
                                                       title,
                                                       website.get_source())
@@ -267,6 +269,7 @@ def online_journal_hr(journal):
 def website_hr(website):
     author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
+    title = italic_text(title)
     return "{0} ({1}) {2} Available at: {3}".format(author_str, website.get_year(),
                                                     title,
                                                     website.get_source())
