@@ -23,7 +23,9 @@ def parse_to_amj(reference):
     elif reference.get_category() == Defs.JournalInPress:
         return journal_inpress_amj(reference)
     elif reference.get_category() in [Defs.OnLineJournal, Defs.Website]:
-        return online_resources_amj(reference)
+        return online_journal_amj(reference)
+    elif reference.get_category() == Defs.Website:
+        return website_amj(reference)
     elif reference.get_category() == Defs.Other:
         return other(reference)
 
@@ -41,8 +43,10 @@ def parse_to_hr(reference):
         return chapter_inpress_hr(reference)
     elif reference.get_category() == Defs.JournalInPress:
         return journal_inpress_hr(reference)
-    elif reference.get_category() in [Defs.OnLineJournal, Defs.Website]:
-        return online_resources_hr(reference)
+    elif reference.get_category() == Defs.OnLineJournal:
+        return online_journal_hr(reference)
+    elif reference.get_category() == Defs.Website:
+        return website_hr(reference)
     elif reference.get_category() == Defs.Other:
         return other(reference)
 
@@ -106,14 +110,21 @@ def journal_inpress_amj(journal):
                                                     journal.get_journal())
 
 
-def online_resources_amj(journal):
+def online_journal_amj(journal):
     author_str = get_author_str(journal.get_authors())
-    journal_str = (("<i><b>" + journal.get_journal() + "</b></i>. ") if journal.get_journal() else "")
+    journal_str = "<i><b>" + journal.get_journal() + "</b></i>. "
     title = general_title_filter(journal.get_title())
     return "{0} {1}. {2} {3}Retrieved from {4}".format(author_str, journal.get_year(),
                                                        title,
                                                        journal_str,
                                                        journal.get_source())
+
+
+def website_amj(website):
+    title = general_title_filter(website.get_title())
+    return "{0} ({1}) {2} Retrieved from: {3}".format(website.get_authors(), website.get_year(),
+                                                      title,
+                                                      website.get_source())
 
 
 def other(journal):
@@ -242,14 +253,21 @@ def journal_inpress_hr(journal):
                                               journal.get_journal())
 
 
-def online_resources_hr(journal):
+def online_journal_hr(journal):
     author_str = get_author_str(journal.get_authors())
-    journal_str = (("<i>" + journal.get_journal() + "</i>. ") if journal.get_journal() else "")
+    journal_str = "<i>" + journal.get_journal() + "</i>. "
     title = general_title_filter(journal.get_title())
     return "{0} ({1}) {2} {3}Available at: {4}".format(author_str, journal.get_year(),
                                                        title,
                                                        journal_str,
                                                        journal.get_source())
+
+
+def website_hr(website):
+    title = general_title_filter(website.get_title())
+    return "{0} ({1}) {2} Available at: {3}".format(website.get_authors(), website.get_year(),
+                                                    title,
+                                                    website.get_source())
 
 
 from Book import *
