@@ -62,7 +62,7 @@ def book_published_amj(book):
 def chapter_published_amj(chapter):
     author_str = get_author_str(chapter.get_authors())
     editor_str = get_reverse_editor_str(chapter.get_editors())
-    chapter_title = general_title_filter(chapter.get_chapter_title())
+    chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
     book_title = book_title_filter(chapter.get_chapter_title(), end="")
     return "{0} {1}. {2} In {3}, {4}{5}: {6}. {7}: {8}.".format(author_str,
                                                                 chapter.get_year(),
@@ -77,7 +77,7 @@ def chapter_published_amj(chapter):
 
 def journal_published_amj(journal):
     author_str = get_author_str(journal.get_authors())
-    title = general_title_filter(journal.get_title(), end=".")
+    title = general_title_filter(journal.get_title(), end=".", bold=False, italic=False)
     return "{0} {1}. {2} <i><b>{3}</b></i>, {4}{5}: {6}.".format(author_str, journal.get_year(), title,
                                                                  journal.get_journal(),
                                                                  journal.get_volume(),
@@ -94,7 +94,7 @@ def book_inpress_amj(book):
 def chapter_inpress_amj(chapter):
     author_str = get_author_str(chapter.get_authors())
     editor_str = get_reverse_editor_str(chapter.get_editors())
-    chapter_title = general_title_filter(chapter.get_chapter_title())
+    chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
     book_title = book_title_filter(chapter.get_book_title())
     return "{0} {1}. {2} In {3}, {4}".format(author_str,
                                              chapter.get_year(),
@@ -105,7 +105,7 @@ def chapter_inpress_amj(chapter):
 
 def journal_inpress_amj(journal):
     author_str = get_author_str(journal.get_authors())
-    title = general_title_filter(journal.get_title())
+    title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} {1}. {2} <i><b>{3}</b></i>.".format(author_str, journal.get_year(), title,
                                                     journal.get_journal())
 
@@ -113,7 +113,7 @@ def journal_inpress_amj(journal):
 def online_journal_amj(journal):
     author_str = get_author_str(journal.get_authors())
     journal_str = "<i><b>" + journal.get_journal() + "</b></i>. "
-    title = general_title_filter(journal.get_title())
+    title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} {1}. {2} {3}Retrieved from {4}".format(author_str, journal.get_year(),
                                                        title,
                                                        journal_str,
@@ -123,8 +123,6 @@ def online_journal_amj(journal):
 def website_amj(website):
     author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
-    title = bold_text(title)
-    title = italic_text(title)
     return "{0} ({1}) {2} Retrieved from: {3}".format(author_str, website.get_year(),
                                                       title,
                                                       website.get_source())
@@ -171,18 +169,22 @@ def book_title_filter(title, bold=True, italic=True, end="."):
     if re.search('\(.*?ed\.\)', title):
         new_title = re.search('(.*?)(\(.*?ed\.\))', title).group(1).strip()
         title_sub = " " + re.search('(.*?)(\(.*?ed\.\))', title).group(2).strip()
-    new_title = general_title_filter(new_title, end=end)
-    if bold:
-        new_title = bold_text(new_title)
-    if italic:
-        new_title = italic_text(new_title)
+    new_title = general_title_filter(new_title, end=end, bold=bold, italic=italic)
     return new_title + title_sub
 
 
-def general_title_filter(title, end="."):
+def general_title_filter(title, end=".", bold=True, italic=True):
     if title.endswith("?") or title.endswith("!"):
+        if bold:
+            title = bold_text(title)
+        if italic:
+            title = italic_text(title)
         return title
     else:
+        if bold:
+            title = bold_text(title)
+        if italic:
+            title = italic_text(title)
         return title + end
 
 
@@ -206,7 +208,7 @@ def chapter_published_hr(chapter):
     author_str = get_author_str(chapter.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
     editor_str = get_editor_str(chapter.get_editors(), ed=" (ed.)", eds=" (eds)", cat1=", ", cat2=", ", f_cat="",
                                 fl_cat=" ")
-    chapter_title = general_title_filter(chapter.get_chapter_title())
+    chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
     book_title = book_title_filter(chapter.get_book_title(), italic=True, bold=False)
     return "{0} ({1}) {2} In: {3} {4} {5}: {6}{7}, {8}.".format(author_str,
                                                                 chapter.get_year(),
@@ -222,7 +224,7 @@ def chapter_published_hr(chapter):
 
 def journal_published_hr(journal):
     author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
-    title = general_title_filter(journal.get_title())
+    title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} ({1}) {2} <i>{3}</i> {4}{5}: {6}.".format(author_str, journal.get_year(), title,
                                                           journal.get_journal(),
                                                           journal.get_volume(),
@@ -240,7 +242,7 @@ def chapter_inpress_hr(chapter):
     author_str = get_author_str(chapter.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
     editor_str = get_editor_str(chapter.get_editors(), ed=" (ed.)", eds=" (eds)", cat1=", ", cat2=", ", f_cat="",
                                 fl_cat=" ")
-    chapter_title = general_title_filter(chapter.get_chapter_title())
+    chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
     book_title = book_title_filter(chapter.get_book_title(), italic=True, bold=False)
     return "{0} ({1}) {2} In: {3} {4}".format(author_str,
                                               chapter.get_year(),
@@ -251,7 +253,7 @@ def chapter_inpress_hr(chapter):
 
 def journal_inpress_hr(journal):
     author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
-    title = general_title_filter(journal.get_title())
+    title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} ({1}) {2} <i>{3}</i>.".format(author_str, journal.get_year(), title,
                                               journal.get_journal())
 
@@ -259,7 +261,7 @@ def journal_inpress_hr(journal):
 def online_journal_hr(journal):
     author_str = get_author_str(journal.get_authors())
     journal_str = "<i>" + journal.get_journal() + "</i>. "
-    title = general_title_filter(journal.get_title())
+    title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} ({1}) {2} {3}Available at: {4}".format(author_str, journal.get_year(),
                                                        title,
                                                        journal_str,
@@ -268,8 +270,7 @@ def online_journal_hr(journal):
 
 def website_hr(website):
     author_str = get_author_str(website.get_authors())
-    title = general_title_filter(website.get_title())
-    title = italic_text(title)
+    title = general_title_filter(website.get_title(), bold=False, italic=True)
     return "{0} ({1}) {2} Available at: {3}".format(author_str, website.get_year(),
                                                     title,
                                                     website.get_source())
