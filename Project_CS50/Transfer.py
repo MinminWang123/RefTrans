@@ -259,7 +259,7 @@ def journal_inpress_hr(journal):
 
 
 def online_journal_hr(journal):
-    author_str = get_author_str(journal.get_authors())
+    author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
     journal_str = "<i>" + journal.get_journal() + "</i>. "
     title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} ({1}) {2} {3}Available at: {4}".format(author_str, journal.get_year(),
@@ -269,7 +269,7 @@ def online_journal_hr(journal):
 
 
 def website_hr(website):
-    author_str = get_author_str(website.get_authors())
+    author_str = get_author_str(website.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
     title = general_title_filter(website.get_title(), bold=False, italic=True)
     return "{0} ({1}) {2} Available at: {3}".format(author_str, website.get_year(),
                                                     title,
