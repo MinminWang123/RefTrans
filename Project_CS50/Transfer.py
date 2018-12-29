@@ -22,6 +22,10 @@ def parse_to_amj(reference):
         return chapter_inpress_amj(reference)
     elif reference.get_category() == Defs.JournalInPress:
         return journal_inpress_amj(reference)
+    elif reference.get_category() in [Defs.OnLineJournal, Defs.Website]:
+        return online_resources_amj(reference)
+    elif reference.get_category() == Defs.Other:
+        return other(reference)
 
 
 def parse_to_hr(reference):
@@ -37,6 +41,10 @@ def parse_to_hr(reference):
         return chapter_inpress_hr(reference)
     elif reference.get_category() == Defs.JournalInPress:
         return journal_inpress_hr(reference)
+    elif reference.get_category() in [Defs.OnLineJournal, Defs.Website]:
+        return online_resources_hr(reference)
+    elif reference.get_category() == Defs.Other:
+        return other(reference)
 
 
 def book_published_amj(book):
@@ -103,12 +111,12 @@ def online_resources_amj(journal):
     journal_str = (("<i><b>" + journal.get_journal() + "</b></i>. ") if journal.get_journal() else "")
     title = general_title_filter(journal.get_title())
     return "{0} {1}. {2} {3}Retrieved from {4}".format(author_str, journal.get_year(),
-                                                        title,
-                                                        journal_str,
-                                                        journal.get_source())
+                                                       title,
+                                                       journal_str,
+                                                       journal.get_source())
 
 
-def other_amj(journal):
+def other(journal):
     return journal.get_original()
 
 
@@ -132,7 +140,7 @@ def get_editor_str(editors, cat1=", ", cat2=" & ", eds=" (Eds.)", ed=" (Ed.)", f
     return editor_str
 
 
-def get_reverse_editor_str(editors, cat1=", ", cat2=" & ", eds=" (Eds.)", ed=" (Ed.)", f_cat=". ", fl_cat=", "):
+def get_reverse_editor_str(editors, cat1=", ", cat2=" & ", eds=" (Eds.)", ed=" (Ed.)", f_cat=". ", fl_cat=""):
     editor_str = editors[0].to_reverse_format_string(f_cat=f_cat, fl_cat=fl_cat)
     for editor in editors[1:-1]:
         editor_str += cat1 + editor.to_reverse_format_string(f_cat=f_cat, fl_cat=fl_cat)
@@ -231,7 +239,7 @@ def journal_inpress_hr(journal):
     author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
     title = general_title_filter(journal.get_title())
     return "{0} ({1}) {2} <i>{3}</i>.".format(author_str, journal.get_year(), title,
-                                               journal.get_journal())
+                                              journal.get_journal())
 
 
 def online_resources_hr(journal):
@@ -239,9 +247,9 @@ def online_resources_hr(journal):
     journal_str = (("<i>" + journal.get_journal() + "</i>. ") if journal.get_journal() else "")
     title = general_title_filter(journal.get_title())
     return "{0} ({1}) {2} {3}Available at: {4}".format(author_str, journal.get_year(),
-                                                        title,
-                                                        journal_str,
-                                                        journal.get_source())
+                                                       title,
+                                                       journal_str,
+                                                       journal.get_source())
 
 
 from Book import *
