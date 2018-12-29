@@ -1,37 +1,65 @@
 ﻿<!DOCTYPE html>
 <head>
-<meta charset="utf-8">
-<script src="..\static\jquery\jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="..\static\demo.js"></script>
-<link rel="stylesheet" type="text/css" href="..\static\demo.css"/>
+    <meta charset="utf-8">
+    <script src="..\static\jquery\jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="..\static\demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\static\demo.css"/>
 </head>
 
 <body>
-	<div class="demoTitle">
-		<h1>Demo</h1>
-	</div>
+<div class="demoTitle">
+    <h1>Reference Transformer (demo)</h1>
+</div>
 
-	<div class="demoContents">
-		<div class="demoDisplayFieldI">
-			<div class="inputTextBoxDiv">
-				<textarea class="inputTextBox" type="text" id="inputText"></textarea>
-			</div>
-			<div class="submitDiv">
-				<button id="submitBtn">Submit</button>
-			</div>
-		</div>
+<div class="demoContents">
+    <div class="demoDisplayFieldI">
+        <div class="langSelDiv">
+            <label style="font-size: 20px;">Input: </label>
+        </div>
+        <div class="inputTextBoxDiv">
+            <textarea class="inputTextBox" type="text" id="inputText"></textarea>
+        </div>
+        <div class="submitDiv">
+            <button id="submitBtn" style="height: 40px; width: 100px; font-size: 20px; position: absolute; right: 40%;">Submit</button>
+        </div>
+    </div>
 
-		<div class="demoDisplayFieldO">
-			<div class="langSelDiv">
-				<select id="langSel">
-					<option value="AMJ">Academy of Management Journal</option>
-					<option value="AMR">Academy of Management Review</option>
-					<option value="HR">Human Relations</option>
-				</select>
-			</div>
-			<div class="outputDiv" style="overflow-y:scroll;">
-				<label id="outputLbl"></label>
-			</div>
-		</div>
-	</div>
+    <div class="demoDisplayFieldO">
+        <div class="langSelDiv">
+            <select id="langSel">
+                <option value="" selected disabled hidden>select a journal</option>
+                <option value="AMJ">Academy of Management Journal</option>
+                <option value="AMR">Academy of Management Review</option>
+                <option value="HR">Human Relations</option>
+            </select>
+        </div>
+        <div class="outputDiv" style="overflow-y:scroll;">
+            <label id="outputLbl"></label>
+        </div>
+    </div>
+</div>
+<div class="demoDisplayFieldRemark">
+    <div class="remarkBoxDiv">
+        Samples: (You can copy and paste the following samples to see how the website works)
+        <ul>
+            <li>Matthews, G., Smith, Y., & Knowles, G. (2009). Disaster management in archives, libraries and
+                museums. Farnham, England: Ashgate.
+            </li>
+            <li>
+                De Abreu, B.S. (2001). The role of media literacy education within social networking and the library. In
+                D. E. Agosto & J. Abbas (Eds.), Teens, libraries, and social networking (pp. 39-48). Santa Barbara, CA:
+                ABC-CLIO.
+            </li>
+            <li>
+                Gleditsch, N. P., Pinker, S., Thayer, B. A., Levy, J. S., & Thompson, W. R. (2013). The forum: The
+                decline of war. International Studies Review, 15(3), 396-419.
+            </li>
+            <li>
+                Baloh, P., & Burke, M. E. (2007). Attaining organizational innovations.
+                http://dx.doi.org/10.1007/978-0-387-72804-9_30
+            </li>
+
+        </ul>
+    </div>
+</div>
 </body>

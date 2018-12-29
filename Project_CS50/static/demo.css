@@ -1,65 +1,87 @@
-.demoTitle{
-	text-align: center;
+.demoTitle {
+    text-align: center;
 }
 
-.demoContents{
-	position: relative;
+.demoContents {
+    position: relative;
+    height: 600px;
 }
 
-.demoDisplayFieldI{
-	position: absolute;
-	display: inline-block;
-	top:0px;
-	right: 50%;
-	width: 500px;
-	height: 700px;
-	padding: 5px;
+.demoDisplayFieldI {
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    right: 50%;
+    width: 500px;
+    height: 600px;
+    padding: 5px;
 }
 
-.demoDisplayFieldO{
-	position: absolute;
-	text-align: left;
-	display: inline-block;
-	top:0px;
-	left:50%;
-	width: 500px;
-	height: 700px;
-	padding: 5px;
+.demoDisplayFieldO {
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    top: 0px;
+    left: 50%;
+    width: 500px;
+    height: 600px;
+    padding: 5px;
 }
 
-.inputTextBoxDiv{
-	position: relative;
-	top: 30px;
-	display: block;
+.langSelDiv {
+    position: relative;
+    top: 0px;
+    height: 25px;
+    width: 150px;
 }
 
-.inputTextBox{		
-	text-align: left;
-	width: 480px;
-	height: 600px;
-	padding: 5px;
-	border: 2px solid gray;
+.inputTextBoxDiv {
+    position: relative;
+    display: block;
+    top: 5px;
 }
 
-.outputDiv{
-	position: relative;
-	text-align: left;
-	display: block;
-	top:5px;
-	width: 480px;
-	height: 600px;
-	padding: 5px;
-	border: 2px solid gray;
+.inputTextBox {
+    text-align: left;
+    width: 480px;
+    height: 500px;
+    padding: 5px;
+    border: 2px solid gray;
 }
 
-
-#langSel{
-	width: 150px;
-	height: 25px;
+.outputDiv {
+    position: relative;
+    text-align: left;
+    display: block;
+    top: 5px;
+    width: 480px;
+    height: 500px;
+    padding: 5px;
+    border: 2px solid gray;
 }
 
-.submitDiv{
-	position: relative;
-	top: 35px;
-	display: block;
+#langSel {
+    width: 400px;
+    height: 28px;
+    font-size: 20px;
+}
+
+.demoDisplayFieldRemark {
+    position: relative;
+}
+
+.remarkBoxDiv {
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    right: 26%;
+    width: 1000px;
+    padding: 5px;
+}
+
+.submitDiv {
+    position: relative;
+    top: 5px;
+    height: 50px;
+    display: block;
 }
