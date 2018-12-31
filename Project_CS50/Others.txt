@@ -17,5 +17,3 @@ Le Tour. (2013). Retrieved December 1, 2015, from http://www.letour.com/le-tour/
 Pro Cycling Stats. (2015). Retrieved December 1, 2015, from http://www. procyclingstats.com/
 Raudenbush, S. W., Bryk, A. S., & Congdon, R. (2004). HLM 6 for Windows [Computer software]. Lincolnwood, IL: Scientific Software International.
 Campagna, R. L. (2011). The accuracy of initial trust judgments (Unpublished dissertation). Washington University in St. Louis, St. Louis, MO.
-
-

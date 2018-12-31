@@ -1,7 +1,7 @@
-from Book import BookPublished, BookInPress
-from Chapter import ChapterPublished, ChapterInPress
-from Journal import JournalPublished, JournalInPress
-from Others import OnLineJournal, Website, Other
+from Book import *
+from Chapter import *
+from Journal import *
+from Others import *
 import Transfer
 import re
 import utils
@@ -40,7 +40,7 @@ def decode(original):
         return Other(original)
 
     if "(in press)" not in original:
-        if re.search("\d+,", body):
+        if re.search("\d+(?:\(\d+\))*,", body):
             return JournalPublished(original)
         else:
             return BookPublished(original)
@@ -85,5 +85,12 @@ def transfer(input_text, journal):
 
 
 def main():
-    pass
+    string = "Singleton, R. A., & Straits, B. C. (2010). Approaches to social research (5th ed.). New York, NY: Oxford University Press."
+    print(decode(string).get_category())
+    print(decode(string).get_title())
+    print(encode(decode(string), Defs.AMJ))
 
+
+
+if __name__ == "__main__":
+    main()

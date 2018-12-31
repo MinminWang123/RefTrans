@@ -9,15 +9,16 @@
 <body>
 <div class="demoTitle">
     <h1>Reference Transformer (demo)</h1>
+    <h3>Transform your APA reference to other formats</h3>
 </div>
 
 <div class="demoContents">
     <div class="demoDisplayFieldI">
-        <div class="langSelDiv">
-            <label style="font-size: 20px;">Input: </label>
+        <div class="InputDiv">
+            <label style="font-size: 20px;">Paste your APA reference here</label>
         </div>
         <div class="inputTextBoxDiv">
-            <textarea class="inputTextBox" type="text" id="inputText"></textarea>
+            <textarea class="inputTextBox" type="text" id="inputText" placeholder="Temporarily, we only support APA format." style="font-size: 14px; font-family: 'Times New Roman';"></textarea>
         </div>
         <div class="submitDiv">
             <button id="submitBtn" style="height: 40px; width: 100px; font-size: 20px; position: absolute; right: 40%;">Submit</button>
@@ -34,28 +35,32 @@
             </select>
         </div>
         <div class="outputDiv" style="overflow-y:scroll;">
-            <label id="outputLbl" style="font-size: 12px; font-family: 'Times New Roman'"></label>
+            <label id="outputLbl" style="font-size: 14px; font-family: 'Times New Roman';"></label>
+        </div>
+        <div>
+            <label style="font-size: 14px">Note: It may take minutes if you submit a long list.</label>
+            <label style="font-size: 14px; color:red">Reference marked in red may be problematic.</label>
         </div>
     </div>
 </div>
 <div class="demoDisplayFieldRemark">
-    <div class="remarkBoxDiv">
+    <div class="remarkBoxDiv" style="font-size: 14px; font-family: 'Times New Roman';">
         Samples: (You can copy and paste the following samples to see how the website works)
         <ul>
-            <li>Matthews, G., Smith, Y., & Knowles, G. (2009). Disaster management in archives, libraries and
-                museums. Farnham, England: Ashgate.
+            <li>Matthews, G., Smith, Y., & Knowles, G. (2009). <i>Disaster management in archives, libraries and
+                museums</i>. Farnham, England: Ashgate.
             </li>
             <li>
                 De Abreu, B.S. (2001). The role of media literacy education within social networking and the library. In
-                D. E. Agosto & J. Abbas (Eds.), Teens, libraries, and social networking (pp. 39-48). Santa Barbara, CA:
+                D. E. Agosto & J. Abbas (Eds.), <i>Teens, libraries, and social networking</i> (pp. 39-48). Santa Barbara, CA:
                 ABC-CLIO.
             </li>
             <li>
                 Gleditsch, N. P., Pinker, S., Thayer, B. A., Levy, J. S., & Thompson, W. R. (2013). The forum: The
-                decline of war. International Studies Review, 15(3), 396-419.
+                decline of war. <i>International Studies Review</i>, <i>15</i>(3), 396-419.
             </li>
             <li>
-                Baloh, P., & Burke, M. E. (2007). Attaining organizational innovations. Retrieved from http://dx.doi.org/10.1007/978-0-387-72804-9_30
+                Baloh, P., & Burke, M. E. (2007). <i>Attaining organizational innovations</i>. Retrieved from http://dx.doi.org/10.1007/978-0-387-72804-9_30
             </li>
 
         </ul>

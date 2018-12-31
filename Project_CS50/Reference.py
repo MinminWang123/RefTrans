@@ -62,7 +62,7 @@ def main():
             b = Reference(line)
             print("Original: " + line.strip())
             print("Source: " + b.get_source())
-            print("Body: " + b.get_body())
+            print("Body: " + b._get_body())
             print()
 
 

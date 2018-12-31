@@ -24,6 +24,9 @@ class JournalPublished(Journal):
             if re.search('.*?\D\.\s', self._get_body()):
                 try:
                     self._title = re.search('(.*?\D)\.\s', self._get_body()).group(1).strip()
+                    if len(self._title) == 0:
+                        self._parsed = False
+                        self._title = "error in title"
                 except AttributeError:
                     self._parsed = False
                     self._title = "error in title"
@@ -31,6 +34,9 @@ class JournalPublished(Journal):
             elif re.search("\?", self._get_body()):
                 try:
                     self._title = re.search('(.*?\?)\s', self._get_body()).group(1).strip()
+                    if len(self._title) == 0:
+                        self._parsed = False
+                        self._title = "error in title"
                 except AttributeError:
                     self._parsed = False
                     self._title = "error in title"
@@ -39,6 +45,9 @@ class JournalPublished(Journal):
             else:
                 try:
                     self._title = re.search('(.*?!)\s', self._get_body()).group(1).strip()
+                    if len(self._title) == 0:
+                        self._parsed = False
+                        self._title = "error in title"
                 except AttributeError:
                     self._parsed = False
                     self._title = "error in title"
@@ -55,6 +64,9 @@ class JournalPublished(Journal):
         exp = re.sub("!", '.', exp)
         try:
             self._journal = re.search(".*\.(.*?),\s\d.*", exp).group(1).strip()
+            if len(self._journal) == 0:
+                self._parsed = False
+                self._title = "error in journal"
         except AttributeError:
             self._parsed = False
             self._journal = "error in journal"
@@ -126,6 +138,9 @@ class JournalInPress(Journal):
             exp = "(.*)" + self.get_journal()
         try:
             self._title = re.search(exp, self._get_body()).group(1).strip()
+            if len(self._title) == 0:
+                self._parsed = False
+                self._title = "error in title"
         except AttributeError:
             self._parsed = False
             self._title = "error in title"
@@ -139,6 +154,9 @@ class JournalInPress(Journal):
         exp = re.sub("!", '.', exp)
         try:
             self._journal = re.search(".*\.(.+?)\.", exp).group(1).strip()
+            if len(self._journal) == 0:
+                self._parsed = False
+                self._journal = "error in journal"
         except AttributeError:
             self._parsed = False
             self._journal = "error in journal"

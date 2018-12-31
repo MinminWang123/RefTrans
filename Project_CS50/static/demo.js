@@ -16,7 +16,9 @@ $(document).ready(function(){
 
 	$("#submitBtn").click(function(){
 		inputText=$("#inputText").val();
+		if (inputText == null) {alert("Please enter your reference");}
 		langSel=$("#langSel").val();
+		if (langSel == null) {alert("Please select a journal");}
 		$.ajax({url: "/transfer", data: {o:inputText, j:langSel}, type: "GET", dataType: "json",})
 			.done(function(json) {
 				$("#outputLbl").html(function() {

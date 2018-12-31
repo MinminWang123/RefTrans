@@ -14,6 +14,9 @@ class Chapter(Reference):
     def _parse_chapter_title(self):
         try:
              self._ctitle = re.search('(.*?)[\.\?]\sIn.+', self._get_body()).group(1).strip()
+             if len(self._ctitle) == 0:
+                 self._parsed = False
+                 self._ctitle = "error in chapter title"
         except AttributeError:
             self._parsed = False
             self._ctitle = "error in chapter title"
@@ -31,6 +34,10 @@ class Chapter(Reference):
 
     def _split_editors(self, raw_text):
         editors = re.findall('(?:[A-Z]\.\s*)+(?:\w|\s)+', raw_text)
+        if len(editors) == 0:
+            self._parsed = False
+            self._editors = "error in editors"
+            return
         for editor in editors:
             self._editors.append(AuthorFL(editor))
 
@@ -50,6 +57,9 @@ class ChapterPublished(Chapter):
     def _parse_book_title(self):
         try:
             self._btitle = re.search('\([Ee]ds*.*\).*?(\w.*?)\(.*pp', self._original).group(1).strip()
+            if len(self._btitle) == 0:
+                self._parsed = False
+                self._btitle = "error in book title"
         except AttributeError:
             self._parsed = False
             self._btitle = "error in book title"
@@ -62,6 +72,9 @@ class ChapterPublished(Chapter):
         try:
             self._page_addition = re.search('.*\((.*?)pp(.*?)\)', self._original).group(1)
             self._pages = re.findall('\w*\d+', re.search('.*\(.*?pp(.*?)\)', self._original).group(1))
+            if len(self._pages) == 1:
+                self._parsed = False
+                self._pages = [self._pages[0], "error in ending page"]
         except AttributeError:
             self._parsed = False
             self._page_addition = None
@@ -103,6 +116,9 @@ class ChapterPublished(Chapter):
             exp = self.get_location() + ":(.+)\."
         try:
             self._publisher = re.search(exp, self._get_body()).group(1).strip()
+            if len(self._publisher) == 0:
+                self._parsed = False
+                self._publisher = "error in publisher"
         except AttributeError:
             self._parsed = False
             self._publisher = "error in publisher"
@@ -123,6 +139,9 @@ class ChapterInPress(Chapter):
     def _parse_book_title(self):
         try:
             self._btitle = re.search('\([Ee]ds*.*\).*?(\w.*?)\.', self._get_body()).group(1).strip()
+            if len(self._btitle) == 0:
+                self._parsed = False
+                self._btitle = "error in book title"
         except AttributeError:
             self._parsed = False
             self._btitle = "error in book title"

@@ -123,7 +123,7 @@ def online_journal_amj(journal):
 def website_amj(website):
     author_str = get_author_str(website.get_authors())
     title = general_title_filter(website.get_title())
-    return "{0} ({1}) {2} Retrieved from: {3}".format(author_str, website.get_year(),
+    return "{0} {1}. {2} Retrieved from {3}".format(author_str, website.get_year(),
                                                       title,
                                                       website.get_source())
 
@@ -169,8 +169,8 @@ def book_title_filter(title, bold=True, italic=True, end="."):
     if re.search('\(.*?ed\.\)', title):
         new_title = re.search('(.*?)(\(.*?ed\.\))', title).group(1).strip()
         title_sub = " " + re.search('(.*?)(\(.*?ed\.\))', title).group(2).strip()
-    new_title = general_title_filter(new_title, end=end, bold=bold, italic=italic)
-    return new_title + title_sub
+    new_title = general_title_filter(new_title, end="", bold=bold, italic=italic)
+    return new_title + title_sub + end
 
 
 def general_title_filter(title, end=".", bold=True, italic=True):
