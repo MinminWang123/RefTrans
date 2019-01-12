@@ -1,0 +1,66 @@
+Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Newbury Park, CA: Sage.
+Bandura, A. (1977). Social learning theory. Oxford, UK: Prentice Hall.
+Bass, B. M. (1990). Bass & Stogdill’s handbook of leadership. New York, NY: The Free Press.
+Blau, P. M. (1964). Exchange and power in social life. New York, NY: Wiley and Sons.
+Hindle, T. (2008). Guide to management ideas and gurus. London, UK: Profile.
+Muthén, L. K., & Muthén, B. O. (2014). Mplus user’s guide (7.3 ed.). Los Angeles, CA: Author.
+Snijders, T., & Bosker, R. (2012). Discrete dependent variables. Multilevel analysis: An introduction to basic and advanced multilevel modelling. London, UK: Sage.
+Bandura, A. (1977). Social learning theory. Englewood Cliffs, NJ: Prentice Hall.
+Cutrona, C. E. (1996). Social support in couples. Thousand Oaks, CA:Sage.
+de Vries, R. E. (1997). Need for leadership: A solution for empirical problems in situational theories of leadership. Tilburg, the Netherlands: Febo.
+Hofstede, G., Hofstede, G. J., & Minkov, M. (2010). Cultures and organizations: Software of the mind (3rd ed.). New York, NY: McGraw-Hill.
+Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Analysis of dyadic data. New York, NY: Guilford.
+Portegijs, W., & Van den Brakel, M. (2016). Changes in the life situation and life course. The Hague, the Netherlands: Textcetera.
+Singleton, R. A., & Straits, B. C. (2010). Approaches to social research (5th ed.). New York, NY: Oxford University Press.
+Bandura, A. (1986). Social foundations of thought and action: A social cognitive theory. Englewood Cliffs, NJ: Prentice Hall.
+Bass, B. M., & Avolio, B. J. (1997). Full-range of leadership development: Manual for the Multifactor Leadership Questionnaire. Palo Alto, CA: Mind Garden.
+Muthén, L. K., & Muthén, B. O. (2012). Mplus user’s guide (7th ed.). Los Angeles, CA: Author.
+Aguinis, H. (2019). Performance management (4th ed.). Chicago, IL: Chicago Business Press. https://chicagobusinesspress.com/book/perfmgmt4
+Bak, P. (1996). How nature works: The science of self-organized criticality. New York, NY: Copernicus. http://dx.doi.org/10.1007/978-1-4757-5426-1
+Baron-Cohen, S. (2003). The essential difference. New York, NY: Basic Books.
+Bentley, J. T., & Adamson, R. (2003). Gender differences in the careers of academic scientists and engineers: A literature review. Arlington, VA: National Science Foundation.
+Edwards, A. W. F. (1972). Likelihood. Cambridge, UK: Cambridge University Press.
+Halpern, D. F. (2000). Sex differences in cognitive abilities (3rd ed.). Mahwah, NJ: Lawrence Erlbaum.
+Mason, M. A., & Goulden, M. (2009). UC doctoral student career and life survey. Berkeley, CA: UC Berkeley.
+Popper, K. R. (1959). The logic of scientific discovery. London, UK: Hutchinson.
+Taleb, N. N. (2007). The black swan: The impact of the highly improbable. New York, NY: Random House.
+Xie, Y., & Shauman, K. A. (2003). Women in science: Career processes and outcomes. Cambridge, MA: Harvard University Press.
+Brown, T. A. (2006). Confirmatory factor analysis for applied research. New York, NY: Guilford Press Publications.
+Fiske, S. T., & Taylor, S. E. (1991). Social cognition (2nd ed.). New York, NY: McGraw-Hill.
+Goffman, E. (1963). Stigma: Notes on the management of spoiled identity. New York, NY: Simon & Schuster, Inc.
+Hawthorne, N. (1850). The scarlet letter. New York, NY: Bantam Books.
+Hogg, M. A. (1992). The social psychology of group cohesiveness: From attraction to social identity. New York, NY: New York University Press.
+Jourard, S. M. (1971). Self-disclosure: An experimental analysis of the transparent self. New York, NY: Wiley.
+Kline, R. B. (2011). Principles and practice of structural equation modeling (3rd ed.). New York, NY: Guilford Press. 
+Muthén, L. K., & Muthén, B. O. (2012). Mplus user’s guide (7th ed.). Los Angeles, CA: Author.
+Rosenfeld, P., Giacalone, R. A., & Riordan, C. A. (1995). Impression management in organizations. London, England: Routledge.
+Schlenker, B. R. (1980). Impression management: The self-concept, social identity, and interpersonal relations. Monterey, CA: Brooks/Cole.
+Schwab, D. P. (2005). Research methods for organizational studies (2nd ed.). London, England: Routledge.
+Aiken, L. S., West, S. G., & Reno, R. R. (1991). Multiple regression: Testing and interpreting interactions. Thousand Oaks, CA: Sage.
+Arrow, K. (1974). The limits of organization. New York, NY: Norton.
+Bandura, A. (1977). Social learning theory. Englewood Cliffs, NJ: Prentice Hall.
+Bandura, A. (1986). Social foundations of thought and action: A social cognitive theory. Englewood Cliffs, NJ: Prentice Hall.
+Barber, B. (1983). The logic and limits of trust. New Brunswick, NJ: Rutgers University Press.
+Hayes, A. F. (2013). Introduction to mediation, moderation, and conditional process analysis: A regression-based approach. New York, NY: Guilford Press.
+MacKinnon, D. P. (2008). Introduction to statistical mediation analysis. New York, NY: Erlbaum.
+Muthén, L. K., & Muthen, B. (2010). Mplus 6.0. Los Angeles, CA: Muthén & Muthén.
+Ryan, T. P. (1997). Modern regression methods. New York, NY: Wiley.
+Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Boston, MA: Houghton Mifflin.
+Fiske, S. T., & Taylor, S. E. (Eds.). (1991). Social Cognition (2nd ed.). New York, NY: McGraw-Hill.
+Funder, D. C. (1999). Personality judgment: A realistic approach to person perception. San Diego, CA: Academic Press.
+Kahneman, D. (2011). Thinking, Fast and Slow. London, England: Penguin.
+Thornton, G. C., & Rupp, D. E. (2006). Assessment centers in human resource management: Strategies for prediction, diagnosis, and development. Mahwah, NJ: Erlbaum Publishers.
+Thornton, G. C., Mueller-Hanson, R. A., & Rupp, D. E. (2017). Developing organizational simulations: A guide for practitioners, students, and researchers (2nd ed.). New York, NY: Routledge.
+Barker, R. G. (1968). Ecological psychology. Palo Alto, CA: Stanford University Press.
+Kreft, I. G., & de Leeuw, J. (1998). Introducing multilevel modeling. Atlanta, GA: Sage.
+Blumer, H. (1969). Symbolic interactionism: Perspective and method. Englewood Cliffs, NJ: Prentice Hall.
+DeVellis, R. F. (2003). Scale development: Theory and applications (2nd ed.). Thousand Oaks, CA: Sage. 
+Fiske, S. T., & Taylor, S. E. (2013). Social cognition: From brains to culture (2nd ed.). Los Angeles, CA: Sage. http://dx.doi.org/10.4135/9781446286395
+Goffman, E. (1967). Interaction ritual: Essays on face-to-face behavior. New York, NY: Anchor Books.
+Hall, J. A., & Bernieri, F. J. (2001). Interpersonal sensitivity: Theory and measurement. Mahwah, NJ: Erlbaum Associates.
+Hardin, R. (2002). Trust and trustworthiness. New York, NY: Russell Sage Foundation.
+Hayes, A. F. (2017). Introduction to mediation, moderation, and conditional process analysis: A regression-based approach (2nd ed.). New York, NY: Guilford Press.
+Mead, G. H. (1934). Mind, self and society. Chicago, IL: University of Chicago Press.
+Morley, I. E., & Stephenson, G. M. (1977). The social psychology of bargaining. London, UK: G. Allen & Unwin.
+Smith, A. (1853). The theory of moral sentiments. London, UK: Alex Murray.
+Yamagishi, T. (2011). Trust: The evolutionary game of mind and society. Tokyo, Japan: Springer. http://dx.doi.org/10.1007/978-4-431-53936-0

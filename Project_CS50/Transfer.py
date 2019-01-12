@@ -63,7 +63,7 @@ def chapter_published_amj(chapter):
     author_str = get_author_str(chapter.get_authors())
     editor_str = get_reverse_editor_str(chapter.get_editors())
     chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
-    book_title = book_title_filter(chapter.get_chapter_title(), end="")
+    book_title = book_title_filter(chapter.get_book_title(), end="")
     return "{0} {1}. {2} In {3}, {4}{5}: {6}. {7}: {8}.".format(author_str,
                                                                 chapter.get_year(),
                                                                 chapter_title,
@@ -76,7 +76,10 @@ def chapter_published_amj(chapter):
 
 
 def journal_published_amj(journal):
-    author_str = get_author_str(journal.get_authors())
+    try:
+        author_str = get_author_str(journal.get_authors())
+    except AttributeError:
+        author_str = "error"
     title = general_title_filter(journal.get_title(), end=".", bold=False, italic=False)
     return "{0} {1}. {2} <i><b>{3}</b></i>, {4}{5}: {6}.".format(author_str, journal.get_year(), title,
                                                                  journal.get_journal(),
@@ -111,7 +114,10 @@ def journal_inpress_amj(journal):
 
 
 def online_journal_amj(journal):
-    author_str = get_author_str(journal.get_authors())
+    try:
+        author_str = get_author_str(journal.get_authors())
+    except AttributeError:
+        author_str = "error"
     journal_str = "<i><b>" + journal.get_journal() + "</b></i>. "
     title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} {1}. {2} {3}Retrieved from {4}".format(author_str, journal.get_year(),
@@ -121,7 +127,10 @@ def online_journal_amj(journal):
 
 
 def website_amj(website):
-    author_str = get_author_str(website.get_authors())
+    try:
+        author_str = get_author_str(website.get_authors())
+    except AttributeError:
+        author_str = "error"
     title = general_title_filter(website.get_title())
     return "{0} {1}. {2} Retrieved from {3}".format(author_str, website.get_year(),
                                                       title,
@@ -206,7 +215,7 @@ def book_published_hr(book):
 
 def chapter_published_hr(chapter):
     author_str = get_author_str(chapter.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
-    editor_str = get_editor_str(chapter.get_editors(), ed=" (ed.)", eds=" (eds)", cat1=", ", cat2=", ", f_cat="",
+    editor_str = get_editor_str(chapter.get_editors(), ed=" (ed)", eds=" (eds)", cat1=", ", cat2=", ", f_cat="",
                                 fl_cat=" ")
     chapter_title = general_title_filter(chapter.get_chapter_title(), bold=False, italic=False)
     book_title = book_title_filter(chapter.get_book_title(), italic=True, bold=False)
@@ -223,7 +232,10 @@ def chapter_published_hr(chapter):
 
 
 def journal_published_hr(journal):
-    author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
+    try:
+        author_str = get_author_str(journal.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
+    except AttributeError:
+        author_str = "error"
     title = general_title_filter(journal.get_title(), bold=False, italic=False)
     return "{0} ({1}) {2} <i>{3}</i> {4}{5}: {6}.".format(author_str, journal.get_year(), title,
                                                           journal.get_journal(),
@@ -269,7 +281,10 @@ def online_journal_hr(journal):
 
 
 def website_hr(website):
-    author_str = get_author_str(website.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
+    try:
+        author_str = get_author_str(website.get_authors(), cat1=", ", cat2=" and ", f_cat="", fl_cat=" ")
+    except AttributeError:
+        author_str = "error"
     title = general_title_filter(website.get_title(), bold=False, italic=True)
     return "{0} ({1}) {2} Available at: {3}".format(author_str, website.get_year(),
                                                     title,

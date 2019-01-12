@@ -5,6 +5,7 @@ from Others import *
 import Transfer
 import re
 import utils
+import operator
 
 
 def decode(original):
@@ -54,7 +55,7 @@ def decode(original):
         return JournalInPress(original)
 
 
-def encode(reference, journal):
+def encode_old(reference, journal):
     """
     encode reference object to a specific journal
     :param reference: a Reference Object
@@ -62,6 +63,30 @@ def encode(reference, journal):
     :return: formatted string
     """
     return Transfer.encode(reference, journal)
+
+
+def encode(reference, journal):
+    if journal == Defs.AMJ:
+        return reference.encode(CodeBook.AMJ)
+    elif journal == Defs.AMR:
+        return reference.encode(CodeBook.AMJ)
+    elif journal == Defs.HR:
+        return reference.encode(CodeBook.HR)
+    elif journal == Defs.ASQ:
+        return reference.encode(CodeBook.ASQ)
+
+
+def compare(original, journal):
+    old = encode_old(decode(original), journal)
+    new = encode(decode(original), journal)
+    if not operator.eq(old.strip(), new.strip()):
+        print(old)
+        print(new)
+        print()
+
+
+def test(original, journal):
+    return encode(decode(original), journal)
 
 
 def transfer(input_text, journal):
@@ -85,11 +110,13 @@ def transfer(input_text, journal):
 
 
 def main():
-    string = "Singleton, R. A., & Straits, B. C. (2010). Approaches to social research (5th ed.). New York, NY: Oxford University Press."
-    print(decode(string).get_category())
-    print(decode(string).get_title())
-    print(encode(decode(string), Defs.AMJ))
-
+    with open("test_cases/others.txt") as file:
+        for line in file.readlines():
+            # print(line.strip())
+            # print(encode2(decode(line), "ASQ"))
+            # print()
+            print(test(line, "ASQ"))
+            print()
 
 
 if __name__ == "__main__":
