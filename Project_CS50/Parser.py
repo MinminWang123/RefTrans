@@ -74,6 +74,12 @@ def encode(reference, journal):
         return reference.encode(CodeBook.HR)
     elif journal == Defs.ASQ:
         return reference.encode(CodeBook.ASQ)
+    elif journal == Defs.JOM:
+        return reference.encode(CodeBook.JOM)
+    elif journal == Defs.JMS:
+        return reference.encode(CodeBook.JMS)
+    else:
+        return reference.encode(CodeBook.APA)
 
 
 def compare(original, journal):
@@ -115,7 +121,7 @@ def main():
             # print(line.strip())
             # print(encode2(decode(line), "ASQ"))
             # print()
-            print(test(line, "ASQ"))
+            print(test(line, "JMS"))
             print()
 
 

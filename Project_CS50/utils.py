@@ -28,16 +28,32 @@ def get_body(text):
     return body
 
 
+def shrink_page(sp, ep):
+    sp = str(sp)
+    ep = str(ep)
+    if len(ep) <= 2:
+        return ep
+    if sp[0] != ep[0]:
+        return ep
+    if sp[1] != ep[1]:
+        return ep[1:]
+    if sp[2] != ep[2]:
+        return ep[2:]
+    else:
+        return ep[2:]
+
+
 def main():
     # with open('Chapter.txt', 'r') as file:
     #     for line in file.readlines():
     #         print("clean:", get_clean_text(line))
     #         print("source:", get_source(line))
     #         print("---------")
-    line = "Chen, G., Mathieu, J. E., & Bliese, P. D. (2004). A framework for conducting multilevel construct validation. In F. J. Yammarino & F. Dansereau (Eds.), Research in multilevel issues: Multilevel issues in organizational behavior and processes (Vol. 3, pp. 273-303). Oxford, UK: Elsevier. httpswww.//dx.doi.org/10.1016/S1475-9144(04)03013-9"
-    print("clean:", get_clean_text(line))
-    print("source:", get_source(line))
-    print("body: ", get_body(line))
+    # line = "Chen, G., Mathieu, J. E., & Bliese, P. D. (2004). A framework for conducting multilevel construct validation. In F. J. Yammarino & F. Dansereau (Eds.), Research in multilevel issues: Multilevel issues in organizational behavior and processes (Vol. 3, pp. 273-303). Oxford, UK: Elsevier. httpswww.//dx.doi.org/10.1016/S1475-9144(04)03013-9"
+    # print("clean:", get_clean_text(line))
+    # print("source:", get_source(line))
+    # print("body: ", get_body(line))
+    print(shrink_page(1, 46))
 
 
 

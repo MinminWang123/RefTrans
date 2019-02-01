@@ -1,5 +1,6 @@
 import re
 import CodeBook
+import utils
 
 """
 File Handler.py
@@ -175,9 +176,14 @@ class Handler(object):
         :param issue: str
         :param dic: a dictionary whose keys are head, tail, bold, italic, end, required
         required: True if issue number is necessary, False otherwise
+        omitted: True if issue number is omitted, False otherwise
         :return: str
         """
-        if dic["required"] or issue:
+        if dic["required"]:
+            return cls.general(issue, dic)
+        if dic["omitted"]:
+            return dic["end"]
+        if issue:
             return cls.general(issue, dic)
         else:
             return dic["end"]
@@ -190,8 +196,11 @@ class Handler(object):
         :param end_page: str
         :param dic: a dictionary whose keys are page_int, head, tail, bold, italic, end
         page_int: interval between pages
+        shrink: True if end page shrinks, False otherwise
         :return: str
         """
+        if dic["shrink"]:
+            end_page = utils.shrink_page(start_page, end_page)
         string = start_page + dic["page_int"] + end_page
         return cls.general(string, dic)
 

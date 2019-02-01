@@ -255,7 +255,8 @@ class JournalInPress(Journal):
     def encode(self, codebook):
         return self.encode_authors(codebook["authors"]) + self.encode_year(codebook["year"]) \
                + self.encode_title(codebook["JournalInPress"]["title"]) \
-               + self.encode_journal(codebook["JournalInPress"]["journal"])
+               + self.encode_journal(codebook["JournalInPress"]["journal"]) \
+               + self.encode_source(codebook["JournalInPress"]["doi"])
 
 
 def main():

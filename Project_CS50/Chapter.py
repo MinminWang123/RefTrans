@@ -268,7 +268,8 @@ class ChapterInPress(Chapter):
         return self.encode_authors(codebook["authors"]) + self.encode_year(codebook["year"]) \
                + self.encode_chapter_title(codebook["ChapterInPress"]["chapter_title"]) \
                + self.encode_editors(codebook["ChapterInPress"]["editors"]) \
-               + self.encode_book_title(codebook["ChapterInPress"]["book_title"])
+               + self.encode_book_title(codebook["ChapterInPress"]["book_title"]) \
+               + self.encode_source(codebook["ChapterInPress"]["doi"])
 
 
 def main():

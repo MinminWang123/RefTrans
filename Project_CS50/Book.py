@@ -168,7 +168,8 @@ class BookInPress(Book):
 
     def encode(self, codebook):
         return self.encode_authors(codebook["authors"]) + self.encode_year(codebook["year"]) \
-               + self.encode_title(codebook["BookInPress"]["title"])
+               + self.encode_title(codebook["BookInPress"]["title"]) \
+               + self.encode_source(codebook["BookInPress"]["doi"])
 
 
 def main():

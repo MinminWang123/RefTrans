@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="504c2c0b-7358-407c-ba62-db8ab22209c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CodeBook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Author.py" beforeDir="false" afterPath="$PROJECT_DIR$/Author.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Chapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapter.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeBook.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodeBook.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Defs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Defs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Journal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Journal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Journal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Others.py" beforeDir="false" afterPath="$PROJECT_DIR$/Others.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Others.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Transfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,18 +22,18 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Project_CS50$Handler.coverage" NAME="Handler Coverage Results" MODIFIED="1546675046682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Others.coverage" NAME="Others Coverage Results" MODIFIED="1546685430100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Project_CS50$utils.coverage" NAME="utils Coverage Results" MODIFIED="1546322984048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Chapter.coverage" NAME="Chapter Coverage Results" MODIFIED="1546682601842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project_CS50$utils.coverage" NAME="utils Coverage Results" MODIFIED="1549006138940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Reference.coverage" NAME="Reference Coverage Results" MODIFIED="1546675087247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Checker.coverage" NAME="Checker Coverage Results" MODIFIED="1547014129017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Reference" />
-    <SUITE FILE_PATH="coverage/Project_CS50$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1547283123545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Project_CS50$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1549016770300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Project_CS50$CitationParser.coverage" NAME="CitationParser Coverage Results" MODIFIED="1546925853070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Reference" />
     <SUITE FILE_PATH="coverage/Project_CS50$ManuscriptParser.coverage" NAME="ManuscriptParser Coverage Results" MODIFIED="1546925863167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Reference" />
     <SUITE FILE_PATH="coverage/Project_CS50$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1545554384810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$test.coverage" NAME="test Coverage Results" MODIFIED="1545566862145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Book.coverage" NAME="Book Coverage Results" MODIFIED="1546675183563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Author.coverage" NAME="Author Coverage Results" MODIFIED="1546846170557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Project_CS50$Parser.coverage" NAME="Parser Coverage Results" MODIFIED="1547282718334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project_CS50$Parser.coverage" NAME="Parser Coverage Results" MODIFIED="1549007908585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project_CS50$Journal.coverage" NAME="Journal Coverage Results" MODIFIED="1546684894082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -49,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Book.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2147">
-              <caret line="117" column="33" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
+            <state relative-caret-position="3097">
+              <caret line="167" selection-start-line="167" selection-end-line="167" />
               <folding>
                 <element signature="e#58#67#0" expanded="true" />
               </folding>
@@ -59,10 +51,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Chapter.py">
+        <entry file="file://$PROJECT_DIR$/Journal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="216" column="3" lean-forward="true" selection-start-line="216" selection-start-column="3" selection-end-line="216" selection-end-column="3" />
+            <state relative-caret-position="4750">
+              <caret line="253" selection-start-line="253" selection-end-line="253" />
               <folding>
                 <element signature="e#67#98#0" expanded="true" />
               </folding>
@@ -73,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -83,24 +75,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Journal.py">
+        <entry file="file://$PROJECT_DIR$/Chapter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4294">
-              <caret line="229" column="27" selection-start-line="229" selection-start-column="27" selection-end-line="229" selection-end-column="27" />
+            <state relative-caret-position="5073">
+              <caret line="271" selection-start-line="271" selection-end-line="271" selection-end-column="70" />
               <folding>
                 <element signature="e#67#98#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Others.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="173" selection-start-line="173" selection-end-line="173" />
-              <folding>
-                <element signature="e#63#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,8 +89,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CodeBook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="277" column="1" lean-forward="true" selection-start-line="277" selection-start-column="1" selection-end-line="277" selection-end-column="1" />
+            <state relative-caret-position="5970">
+              <caret line="440" column="75" selection-start-line="440" selection-start-column="75" selection-end-line="440" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Handler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="183" column="26" lean-forward="true" selection-start-line="183" selection-start-column="26" selection-end-line="183" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -118,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="118" column="19" lean-forward="true" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+            <state relative-caret-position="624">
+              <caret line="125" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -128,34 +129,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Transfer.py">
+        <entry file="file://$PROJECT_DIR$/templates/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="295" column="21" selection-start-line="295" selection-start-column="21" selection-end-line="295" selection-end-column="21" />
+            <state relative-caret-position="646">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Reference.py">
+        <entry file="file://$PROJECT_DIR$/Defs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="40" />
-              <folding>
-                <element signature="e#46#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Handler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4617">
-              <caret line="244" column="41" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -191,21 +177,21 @@
         <option value="$PROJECT_DIR$/Classifier.py" />
         <option value="$PROJECT_DIR$/Other.py" />
         <option value="$PROJECT_DIR$/static/demo.js" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/Encoder.py" />
         <option value="$PROJECT_DIR$/Author.py" />
         <option value="$PROJECT_DIR$/../../../../Reference/RefParser.py" />
-        <option value="$PROJECT_DIR$/Defs.py" />
         <option value="$PROJECT_DIR$/Reference.py" />
         <option value="$PROJECT_DIR$/Others.py" />
-        <option value="$PROJECT_DIR$/Book.py" />
-        <option value="$PROJECT_DIR$/Chapter.py" />
-        <option value="$PROJECT_DIR$/Handler.py" />
-        <option value="$PROJECT_DIR$/Journal.py" />
         <option value="$PROJECT_DIR$/Transfer.py" />
         <option value="$PROJECT_DIR$/temp.py" />
+        <option value="$PROJECT_DIR$/Chapter.py" />
+        <option value="$PROJECT_DIR$/Book.py" />
+        <option value="$PROJECT_DIR$/Journal.py" />
+        <option value="$PROJECT_DIR$/Defs.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/Parser.py" />
         <option value="$PROJECT_DIR$/templates/demo.html" />
+        <option value="$PROJECT_DIR$/Handler.py" />
         <option value="$PROJECT_DIR$/CodeBook.py" />
       </list>
     </option>
@@ -221,7 +207,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,6 +228,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,28 +265,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../Reference/Checker.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CitationParser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Project_CS50" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../Reference" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../Reference/CitationParser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -353,6 +317,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project_CS50" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Flask (app.py)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
       <module name="Project_CS50" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -387,9 +373,9 @@
       <list>
         <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Python.Parser" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.Checker" />
         <item itemvalue="Python.ManuscriptParser" />
-        <item itemvalue="Python.CitationParser" />
       </list>
     </recent_temporary>
   </component>
@@ -410,23 +396,25 @@
       <workItem from="1546826188101" duration="20140000" />
       <workItem from="1547101760485" duration="10293000" />
       <workItem from="1547185037840" duration="10757000" />
-      <workItem from="1547280407057" duration="2681000" />
+      <workItem from="1547280407057" duration="4008000" />
+      <workItem from="1548125898301" duration="1306000" />
+      <workItem from="1548586667325" duration="8721000" />
+      <workItem from="1549016700302" duration="198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167410000" />
+    <option name="totallyTimeSpent" value="178962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08008213" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.080766596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289941" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28402367" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28402367" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -486,20 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python36/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -548,67 +522,7 @@
         <state relative-caret-position="-883" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Defs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2147">
-          <caret line="117" column="33" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
-          <folding>
-            <element signature="e#58#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Journal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4294">
-          <caret line="229" column="27" selection-start-line="229" selection-start-column="27" selection-end-line="229" selection-end-column="27" />
-          <folding>
-            <element signature="e#67#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reference.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="e#46#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4617">
-          <caret line="244" column="41" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Transfer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="295" column="21" selection-start-line="295" selection-start-column="21" selection-end-line="295" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.py" />
     <entry file="file://$PROJECT_DIR$/Others.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -619,47 +533,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser.py">
+    <entry file="file://$PROJECT_DIR$/Transfer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="118" column="19" lean-forward="true" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+        <state relative-caret-position="5263">
+          <caret line="278" column="67" lean-forward="true" selection-start-line="278" selection-start-column="67" selection-end-line="278" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="83" column="43" lean-forward="true" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#46#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/demo.html">
+    <entry file="file://$PROJECT_DIR$/static/demo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="541">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/Book.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="3097">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#58#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chapter.py">
+    <entry file="file://$PROJECT_DIR$/Journal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="216" column="3" lean-forward="true" selection-start-line="216" selection-start-column="3" selection-end-line="216" selection-end-column="3" />
+        <state relative-caret-position="4750">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
           <folding>
             <element signature="e#67#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Chapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5073">
+          <caret line="271" selection-start-line="271" selection-end-line="271" selection-end-column="70" />
+          <folding>
+            <element signature="e#67#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Defs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="183" column="26" lean-forward="true" selection-start-line="183" selection-start-column="26" selection-end-line="183" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CodeBook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="277" column="1" lean-forward="true" selection-start-line="277" selection-start-column="1" selection-end-line="277" selection-end-column="1" />
+        <state relative-caret-position="5970">
+          <caret line="440" column="75" selection-start-line="440" selection-start-column="75" selection-end-line="440" selection-end-column="75" />
         </state>
       </provider>
     </entry>
